@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Development Procedure
 description: Standard development workflow for the LoRACK! mobile application
+unlisted: true
 ---
 
 # LoRACK! Mobile App - Development Procedure
