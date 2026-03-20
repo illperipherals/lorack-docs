@@ -41,4 +41,3 @@ LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It conn
 
 - iOS 17.0+
 - Android 7.0+ (API 24)
-- Web (modern browsers)
