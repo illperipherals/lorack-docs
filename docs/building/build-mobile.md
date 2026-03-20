@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Mobile Build Instructions
 description: Building Android and iOS apps locally
+unlisted: true
 ---
 
 # Mobile Build Instructions
