@@ -21,7 +21,7 @@ ChirpStack provides two streaming endpoints for device telemetry:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     ChirpStack Server                                │
+│                     ChirpStack Server                               │
 │  ┌─────────────────────┐    ┌─────────────────────┐                 │
 │  │ StreamDeviceFrames  │    │ StreamDeviceEvents  │                 │
 │  │  (gRPC-Web stream)  │    │  (gRPC-Web stream)  │                 │
@@ -45,21 +45,21 @@ ChirpStack provides two streaming endpoints for device telemetry:
            │                            │
            ▼                            ▼
 ┌─────────────────────────┐  ┌─────────────────────────┐
-│ frame-metrics-extractor │  │   frame-data-parser    │
-│  • extractRssiFromFrames│  │  • parseFrameData()    │
-│  • extractSnrFromFrames │  │  • parseTelemetryObject│
-│  • extractPacketCounts  │  │  • parseGatewayRxInfo  │
-│  • extractLinkMargin    │  │                        │
+│ frame-metrics-extractor │  │   frame-data-parser     │
+│  • extractRssiFromFrames│  │  • parseFrameData()     │
+│  • extractSnrFromFrames │  │  • parseTelemetryObject │
+│  • extractPacketCounts  │  │  • parseGatewayRxInfo   │
+│  • extractLinkMargin    │  │                         │
 └──────────┬──────────────┘  └──────────┬──────────────┘
            │                            │
            └──────────┬─────────────────┘
                       ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                           UI Layer                                   │
-│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐  │
-│  │ DeviceHealthTab  │  │ DeviceTelemetry  │  │HealthMetricDetail│  │
-│  │  (health scores) │  │  (sensor data)   │  │  (charts)        │  │
-│  └──────────────────┘  └──────────────────┘  └──────────────────┘  │
+│                           UI Layer                                  │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐   │
+│  │ DeviceHealthTab  │  │ DeviceTelemetry  │  │HealthMetricDetail│   │
+│  │  (health scores) │  │  (sensor data)   │  │  (charts)        │   │
+│  └──────────────────┘  └──────────────────┘  └──────────────────┘   │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
