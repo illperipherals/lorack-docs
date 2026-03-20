@@ -2,7 +2,6 @@
 sidebar_position: 6
 title: Changelog
 description: All notable changes to LoRACK!
-unlisted: true
 ---
 
 # Changelog
@@ -11,6 +10,21 @@ All notable changes to LoRACK! are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+
+## [1.0.3] — 2026-03-20
+
+### Added
+
+- **Codec Helper** — test and debug device profile payload codecs with live editing, side-by-side comparison, and recent payload loading
+- **Application editing** — edit application name and description from the application detail screen
+- **Alert detail & rules** — tap an alert to view full details; manage alert rules with create, edit, enable/disable, and delete
+- **Contacts Backup** — export, import, and manage contact backups from Settings with optional photo inclusion
+- **Help screen** — in-app help with links to documentation and support contact
+- **ProfileContacts** — attach contacts directly to server profiles for admin/owner tracking
+- **Survey device tagging** — mark devices as survey devices; badge appears in header and device list for at-a-glance context
+- **Data tab simplification** — consolidated Frames and Events into a single Data tab with sub-tabs
+
+---
 
 ## [1.0.2] — 2026-03-12
 

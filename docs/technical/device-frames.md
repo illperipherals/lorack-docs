@@ -2,7 +2,6 @@
 sidebar_position: 5
 title: "Device Frames & Events"
 description: "Embedded frames and events in the Device Details screen"
-unlisted: true
 ---
 
 # Device Frames & Events in Device Details (More Tab)

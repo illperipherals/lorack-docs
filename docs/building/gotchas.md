@@ -2,7 +2,6 @@
 sidebar_position: 3
 title: Development Gotchas
 description: Common pitfalls and non-obvious requirements
-unlisted: true
 ---
 
 # LoRACK AI Mobile - Development Gotchas

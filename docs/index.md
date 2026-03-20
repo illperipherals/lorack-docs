@@ -25,7 +25,9 @@ LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It conn
 | **AI Troubleshooter** | Natural language diagnostics powered by MoD AI |
 | **QR Scanning** | Rapid device lookup and onboarding via TR005 QR codes |
 | **Site Visits** | Structured field inspection workflows with checklists |
+| **Codec Helper** | Test and debug payload decoder scripts with live editing and comparison |
 | **Command Library** | Reusable downlink command templates |
+| **Contact Backups** | Export, import, and manage contact backups with optional photo inclusion |
 | **Field Tech Access** | Read-only invites with app restrictions and onboarding credits |
 
 ## Documentation Sections
@@ -41,3 +43,4 @@ LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It conn
 
 - iOS 17.0+
 - Android 7.0+ (API 24)
+- Web (modern browsers)

@@ -86,10 +86,11 @@ The Home screen is your central hub. It shows quick-action buttons for all major
 |--------|-------------|
 | **Applications** | Browse your LoRaWAN applications and their devices |
 | **Gateways** | View gateway status, location, and details |
+| **Site Visit** | Run a structured field inspection workflow |
 | **Address Book** | Manage contacts across your network |
 | **Alerts** | Monitor network health with configurable rules |
-| **Scan QR Code** | Look up a device by scanning its QR code |
-| **Site Visit** | Run a structured field inspection workflow |
+
+Below the main buttons, a **Scan QR Code** tile lets you quickly look up a device by scanning its QR code.
 
 If you have an active site visit in progress, a chip appears showing the application name and completion percentage. Tap it to resume.
 
@@ -155,9 +156,11 @@ Additional actions in the Info tab:
 
 Each component shows a trend arrow (improving, stable, or declining). Tap any metric to drill into time-series charts with selectable time ranges (24 hours, 7 days, 30 days, 90 days).
 
-**Commands tab** — Send downlink commands to the device. Choose an FPort, payload format (HEX, Template, or JSON), and whether to require confirmed delivery. You can also pick from saved commands in your Command Library.
+**Sensors tab** — Displays decoded telemetry values extracted from recent uplink payloads (e.g., temperature, humidity, battery voltage). Requires the device profile to have a payload codec configured in ChirpStack. Values update automatically as new frames arrive.
 
 **Data tab** — View raw uplink frames and device events (joins, activations, errors). Useful for debugging. Tap a field title in drilldowns to copy its value.
+
+**Commands tab** — Send downlink commands to the device. Choose an FPort, payload format (HEX, Template, or JSON), and whether to require confirmed delivery. You can also pick from saved commands in your Command Library.
 
 ---
 
@@ -248,7 +251,48 @@ Backups live in **Settings → Backups**.
 
 ---
 
-## Part 8: Command Library
+## Part 8: Codec Helper
+
+The Codec Helper lets you test and debug payload decoder scripts — the JavaScript functions that turn raw LoRaWAN bytes into readable sensor values like temperature, humidity, or battery voltage.
+
+### Opening the Codec Helper
+
+1. Navigate to a **Device Detail** screen
+2. Open the **Info** tab
+3. Tap **Codec Helper** (only appears if the device's profile has a codec script configured in ChirpStack)
+
+### What You Can Do
+
+**Test with recent payloads:** The helper loads the last 20 uplink payloads from the device's frame and event caches. Tap any payload to run it through the codec and see the decoded output instantly.
+
+**Enter a custom payload:** Type a hex string and fPort manually to test specific byte sequences — useful when reproducing issues or testing edge cases.
+
+**Edit the codec script live:** The built-in editor shows the device profile's codec script. Make changes and see how they affect the decoded output in real time. Edits are temporary — they don't modify the device profile on ChirpStack.
+
+**Compare original vs. modified:** When you edit the script, the helper shows a side-by-side comparison highlighting fields that changed, were added, or were removed between the original and modified decoders.
+
+**Copy results:** Tap any decoded result to copy it to the clipboard for sharing or further analysis.
+
+### Supported Codec Patterns
+
+The helper recognizes the codec function signatures used by ChirpStack:
+
+- `decodeUplink({ bytes, fPort })` — ChirpStack v4 standard
+- `Decode(port, bytes)` — ChirpStack v3 / TTN legacy
+- `decode(port, bytes)` — alternative naming
+
+If your codec defines one of these functions, the helper calls it automatically. Scripts that `return` a result directly at the top level also work.
+
+### Tips
+
+- **Reset** your edits at any time with the reset button — the original script from ChirpStack is always preserved
+- If a codec throws an error, the helper displays the error message inline so you can fix the script
+- Use the Codec Helper alongside the **Data** tab to cross-reference raw frame bytes with decoded values
+- Codec scripts run locally on your device — no network call is needed to decode
+
+---
+
+## Part 9: Command Library
 
 The Command Library stores reusable downlink command templates so you don't have to rebuild them every time.
 
@@ -262,7 +306,7 @@ The Command Library stores reusable downlink command templates so you don't have
 
 ---
 
-## Part 9: Site Visits
+## Part 10: Site Visits
 
 Site Visits provide a structured workflow for field technicians inspecting devices on-site.
 
@@ -271,11 +315,12 @@ Site Visits provide a structured workflow for field technicians inspecting devic
 1. Tap **Site Visit** on the Home screen
 2. Select the application you're visiting
 3. You'll see a list of all devices in that application with checkboxes
-4. For each device, work through the checklist items:
-   - Visual inspection
-   - Connectivity check
-   - Signal test
-   - Custom items you add on the fly
+4. For each device, work through the standard checklist:
+   - Visual Inspection
+   - Health Check
+   - Signal Test
+   - Photos & Notes
+   - Mark Complete
 5. Add notes and findings for each device as needed
 6. Track your progress via the percentage indicator in the header
 
@@ -285,13 +330,17 @@ As you inspect devices, you can log findings with a title, severity (Info, Warni
 
 ### Reports
 
-When you're done, generate a shareable text report summarizing the visit — devices inspected, findings, notes, and timestamps.
+When you're done, generate a shareable text report. The report screen offers three ways to share:
+
+- **Send Email** — opens your email client with the report pre-filled in the body. If the application has contacts with email addresses, those are suggested as recipients.
+- **Share** — opens the system share sheet so you can send via any installed app
+- **Copy to Clipboard** — copies the full report text for pasting elsewhere
 
 > **Tip:** Your visit progress saves automatically and persists across app restarts. You can leave and come back without losing progress.
 
 ---
 
-## Part 10: Comparing Devices
+## Part 11: Comparing Devices
 
 When troubleshooting, it helps to compare similar devices side by side.
 
@@ -303,7 +352,7 @@ The comparison view shows health scores, battery levels, connectivity, signal, a
 
 ---
 
-## Part 11: Settings and Preferences
+## Part 12: Settings and Preferences
 
 Access Settings from the gear icon on the Home screen.
 
@@ -324,17 +373,29 @@ Choose from four options:
 | **Start Fresh on Launch** | Always opens to a specific screen instead of your last-visited screen |
 | **Start Screen** | Which screen to open on launch: Home, Devices, or QR Scanner |
 
+### Commands
+
+- **Command Library** — manage your saved downlink command templates (see [Part 9](#part-9-command-library))
+
+### Backups
+
+- **Contacts Backup** — export, import, and manage contact backups. Choose whether to include photos (larger file size) or just contact data. Backups are stored locally and can be shared.
+
+### Developer Tools
+
+- **Streaming Debug** — test gRPC-Web streaming with four modes: Raw Fetch, XHR Text, Frames, and Events (see [Troubleshooting](/getting-started/troubleshooting#streaming-debug))
+
 ### Profile Management (Profiles screen)
 
 Manage server profiles from the Home screen using the profile dropdown or **Go to Profiles**.
 
 - **Add/edit/delete profiles** to manage your ChirpStack server connections
 - **Import/Export profiles** to onboard teammates quickly — export a profile and share it
-- **Field Technician Access** — create read-only invites for field techs with optional app restrictions and onboarding credits (see [Part 12](#part-12-field-technician-access))
+- **Field Technician Access** — create read-only invites for field techs with optional app restrictions and onboarding credits (see [Part 13](#part-13-field-technician-access))
 
 ---
 
-## Part 12: Field Technician Access
+## Part 13: Field Technician Access
 
 Field Technician Access lets admins create limited, read-only invites for field techs who need to view and occasionally onboard devices — without giving them full admin control.
 
@@ -412,7 +473,7 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 
 ---
 
-## Part 13: Tips for Getting the Most Out of LoRACK!
+## Part 14: Tips for Getting the Most Out of LoRACK!
 
 **Use multiple profiles** — If you manage staging and production ChirpStack servers, create a profile for each and switch between them from the Home screen.
 
@@ -438,6 +499,9 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 | Find a specific device | Devices > search bar or QR Scanner |
 | Check if a device is healthy | Device Detail > Health tab |
 | Send a command to a device | Device Detail > Commands tab |
+| Test or debug a payload codec | Device Detail > Info tab > Codec Helper |
+| View decoded sensor telemetry | Device Detail > Sensors tab |
+| Back up or restore contacts | Settings > Backups > Contacts Backup |
 | See device locations on a map | Devices > Map view toggle |
 | Get notified about offline devices | Alerts > Rules > New Rule |
 | Ask AI about a problem | Home > AI Troubleshooter |

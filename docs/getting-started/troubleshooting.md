@@ -339,10 +339,20 @@ npm run android
 
 ### Streaming Debug
 
-The app includes a built-in streaming debug tool:
-1. Go to Settings > Streaming Debug
-2. Test gRPC-Web streaming: raw fetch, frame streaming, event streaming
-3. View real-time connection health and latency
+The app includes a built-in streaming debug tool at **Settings > Developer Tools > Streaming Debug**. Enter a DevEUI and use the four test modes to diagnose streaming issues:
+
+| Mode | What It Tests | Details |
+|------|--------------|---------|
+| **Fetch** | Raw `expo/fetch` binary streaming | Reads the response body as a binary stream and logs bytes in hex. This is the iOS-preferred transport path. |
+| **XHR** | `XMLHttpRequest` with grpc-web-text | Sends and receives base64-encoded chunks. This is the Android-preferred transport path. |
+| **Frames** | End-to-end `streamDeviceFrames()` | Calls the full gRPC streaming pipeline, auto-selects the platform transport, and displays decoded frame messages with timestamps. |
+| **Events** | End-to-end `streamDeviceEvents()` | Same as Frames but for device events (joins, errors, status changes). |
+
+Each mode shows a real-time monospace log with timestamps. Use **Stop** to halt an active test and **Clear Log** to reset.
+
+**When to use which mode:**
+- Start with **Frames** or **Events** — if they work, streaming is healthy
+- If they fail, use **Fetch** (iOS) or **XHR** (Android) to isolate whether the issue is in the transport layer or the gRPC client
 
 ---
 

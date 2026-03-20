@@ -2,7 +2,6 @@
 sidebar_position: 3
 title: "Frame & Event Persistence"
 description: "How frames and events are cached and restored across navigation"
-unlisted: true
 ---
 
 # Frame and Event Persistence Fix
