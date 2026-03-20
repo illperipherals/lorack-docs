@@ -4,13 +4,13 @@ title: Development Procedure
 description: Standard development workflow for the LoRACK! mobile application
 ---
 
-# LauraQ Mobile App - Development Procedure
+# LoRACK! Mobile App - Development Procedure
 
-This document outlines the standard development workflow for the LauraQ (LoRACK) mobile application.
+This document outlines the standard development workflow for the LoRACK! (LoRACK) mobile application.
 
 ## Project Overview
 
-LauraQ is a React Native + Expo cross-platform mobile app that provides a mobile interface for:
+LoRACK! is a React Native + Expo cross-platform mobile app that provides a mobile interface for:
 - **ChirpStack LoRaWAN Network Server** (gRPC-Web)
 - **MoD AI services** (REST/JSON API) for AI-powered features
 
