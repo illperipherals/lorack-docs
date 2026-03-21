@@ -22,7 +22,7 @@ LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It conn
     rel="noopener noreferrer"
   >
     <img
-      src="/img/GetItOnGooglePlay_Badge_Web_color_English.png"
+      src="img/GetItOnGooglePlay_Badge_Web_color_English.png"
       alt="Get it on Google Play"
       style={{ height: '70px' }}
     />
