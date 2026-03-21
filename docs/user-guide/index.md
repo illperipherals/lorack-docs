@@ -14,7 +14,26 @@ Welcome to LoRACK! LoRaWAN Manager! LoRACK! is a mobile app for managing your Lo
 
 ## What Is LoRACK!?
 
-LoRACK! connects directly to your [ChirpStack](https://www.chirpstack.io/) server to let you manage devices, gateways, and applications from your phone or tablet.
+So... What exactly is LoRACK!?
+LoRACK! is designed to connect directly to your [ChirpStack](https://www.chirpstack.io/) server, allowing management of devices, gateways, and applications directly from your mobile device. Sounds pretty straightforward, right? Well, we decided to complicate things a bit. See, we thought that it made sense to not have a server-side component to the app at all. The app should just talk directly to the user’s own ChirpStack instance. We don’t really want to have anything to do with that. We are not in the data warehousing business, and we figured that your data is... well, just that... your data! We don’t want it mucking up our servers and causing all kinds of liability and custody concerns. We figured the best way around that was simply to not deal with it.
+
+Now, this also means that there are no LoRACK! user accounts. Sure, you create profiles (these are your various ChirpStack servers and API keys), and you store them securely on your devices, but it is up to you to back these profiles up. There literally is no Nightjar server that keeps track of all these LoRACK! accounts...
+
+This was very much done intentionally.
+
+It would have been easier to drop a service in there somewhere and have a single point of... place where we could easily cache, deal with Redis, and maintain all sorts of information about all our users and how they use all the things.
+
+But... we didn’t want that. And I hope to convince you that you don’t either.
+
+This did make streaming a bit tricky. Especially on Android.
+
+Streaming ChirpStack on Android without a server is like trying to sip coffee through a fire hose that keeps deciding it’s actually a bucket.
+
+gRPC‑Web wants a steady stream, Android’s network stack wants to buffer everything forever, and you’re left building a tiny browser inside your app just to convince it to drip bytes.
+
+It works… eventually… in the same way duct tape counts as a protocol.
+
+Anyways...
 
 **Key things to know before you start:**
 
