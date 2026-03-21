@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 4
 title: "Battery Telemetry"
 description: "Battery level resolution, chemistry mapping, and telemetry standard"

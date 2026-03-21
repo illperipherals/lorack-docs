@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 6
 title: "Health Scoring Whitepaper"
 description: "The LoRACK! Health Index (LHI): A framework for LoRaWAN device health classification"

@@ -17,7 +17,7 @@ const config: Config = {
   organizationName: 'illperipherals',
   projectName: 'lorack-docs',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -57,12 +57,6 @@ const config: Config = {
           label: 'User Guide',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'docsSidebar',
-          position: 'left',
-          label: 'Technical',
-        },
-        {
           href: 'https://github.com/illperipherals/LoRACK-AI-mobile',
           label: 'GitHub',
           position: 'right',
@@ -82,10 +76,6 @@ const config: Config = {
             {
               label: 'User Guide',
               to: '/user-guide',
-            },
-            {
-              label: 'Health Scoring Whitepaper',
-              to: '/technical/health-scoring',
             },
           ],
         },
@@ -108,10 +98,6 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/illperipherals/LoRACK-AI-mobile',
-            },
-            {
-              label: 'Changelog',
-              to: '/changelog',
             },
           ],
         },

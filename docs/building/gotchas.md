@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 3
 title: Development Gotchas
 description: Common pitfalls and non-obvious requirements
