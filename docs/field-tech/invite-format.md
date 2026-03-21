@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 2
 title: Invite Format & Security
 description: Technical details of the invite payload format and security model
