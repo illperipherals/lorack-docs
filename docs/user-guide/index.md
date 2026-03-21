@@ -12,17 +12,7 @@ Welcome to LoRACK! LoRaWAN Manager! LoRACK! is a mobile app for managing your Lo
 
 ---
 
-<a
-  href="https://play.google.com/store/apps/details?id=io.nightjarsolutions.lorack"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <img
-    src={require('@site/static/img/GetItOnGooglePlay_Badge_Web_color_English.png').default}
-    alt="Get it on Google Play"
-    style={{ height: '70px' }}
-  />
-</a>
+[![Get it on Google Play](/img/GetItOnGooglePlay_Badge_Web_color_English.png)](https://play.google.com/store/apps/details?id=io.nightjarsolutions.lorack)
 
 ## What Is LoRACK!?
 
