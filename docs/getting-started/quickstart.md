@@ -1,5 +1,4 @@
 ---
-draft: true
 sidebar_position: 1
 title: Quick Start
 description: Connect to ChirpStack in 5 minutes

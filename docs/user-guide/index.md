@@ -6,35 +6,15 @@ description: Complete guide to using LoRACK! for LoRaWAN management
 
 # LoRACK! User Guide
 
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/500380cd-e0a9-4a5f-b257-8759a856cba4" />
+![alt text](/img/image.png)
 
 Welcome to LoRACK! LoRaWAN Manager! LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. This guide walks you through everything you need to know to get started and make the most of the app.
 
 ---
-[![Get it on Google Play](/img/GetItOnGooglePlay_Badge_Web_color_English.png)](https://play.google.com/store/apps/details?id=io.nightjarsolutions.lorack)
 
 ## What Is LoRACK!?
 
-So... What exactly is LoRACK!?
-LoRACK! is designed to connect directly to your [ChirpStack](https://www.chirpstack.io/) server, allowing management of devices, gateways, and applications directly from your mobile device. Sounds pretty straightforward, right? Well, we decided to complicate things a bit. See, we thought that it made sense to not have a server-side component to the app at all. The app should just talk directly to the user’s own ChirpStack instance. We don’t really want to have anything to do with that. We are not in the data warehousing business, and we figured that your data is... well, just that... your data! We don’t want it mucking up our servers and causing all kinds of liability and custody concerns. We figured the best way around that was simply to not deal with it.
-
-Now, this also means that there are no LoRACK! user accounts. Sure, you create profiles (these are your various ChirpStack servers and API keys), and you store them securely on your devices, but it is up to you to back these profiles up. There literally is no Nightjar server that keeps track of all these LoRACK! accounts...
-
-This was very much done intentionally.
-
-It would have been easier to drop a service in there somewhere and have a single point of... place where we could easily cache, deal with Redis, and maintain all sorts of information about all our users and how they use all the things.
-
-But... we didn’t want that. And I hope to convince you that you don’t either.
-
-This did make streaming a bit tricky. Especially on Android.
-
-Streaming ChirpStack on Android without a server is like trying to sip coffee through a fire hose that keeps deciding it’s actually a bucket.
-
-gRPC‑Web wants a steady stream, Android’s network stack wants to buffer everything forever, and you’re left building a tiny browser inside your app just to convince it to drip bytes.
-
-It works… eventually… in the same way duct tape counts as a protocol.
-
-Anyways...
+LoRACK! connects directly to your [ChirpStack](https://www.chirpstack.io/) server to let you manage devices, gateways, and applications from your phone or tablet.
 
 **Key things to know before you start:**
 
@@ -256,11 +236,13 @@ Chat history is saved locally (up to 50 messages per session).
 
 ---
 
-## Part 7: Contacts and Photos
+## Part 7: Photos and Contacts
 
-You can attach contacts and photos to devices, applications, and gateways. This is useful for tracking who is responsible for what equipment, or for documenting installation details with photos.
+You can attach photos and contacts to devices, applications, and gateways. This is useful for tracking who is responsible for what equipment, or for documenting installation details with photos.
 
-**Adding contacts:** Tap the photo/contact area on any device, application, or gateway card. You can add a name, email, phone number, and role.
+**Photos & Contacts screen:** Tap the photo placeholder or existing photo on any device, application, or gateway card to open the Photos & Contacts screen.
+
+**Add a photo or contact:** Use the primary action on the Photos & Contacts screen to add a new photo or contact (name, email, phone number, role).
 
 **Managing photos:** Upload multiple photos per resource, set a primary photo (which appears in list views), and use pinch-to-zoom for inspection.
 
@@ -534,3 +516,10 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 
 ---
 
+## Further Reading
+
+- [Quick Start](/getting-started/quickstart) — 5-minute connection setup
+- [Troubleshooting](/getting-started/troubleshooting) — Detailed troubleshooting for connection and app issues
+- [Build Mobile](/building/build-mobile) — Building native Android and iOS packages
+
+> **Technical aside (dry humor):** Streaming ChirpStack on Android without a server is like trying to sip coffee through a fire hose that keeps deciding it's actually a bucket. gRPC-Web wants a steady stream, Android's network stack wants to buffer everything forever, and you're left building a tiny browser inside your app just to convince it to drip bytes. It works… eventually… in the same way duct tape counts as a protocol.

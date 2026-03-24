@@ -9,13 +9,11 @@ description: Mobile LoRaWAN network management via ChirpStack with optional MoD 
 
 LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It connects directly to your [ChirpStack](https://www.chirpstack.io/) v4 server via gRPC-Web — no proxy required.
 
-[![Get it on Google Play](/img/GetItOnGooglePlay_Badge_Web_color_English.png)](https://play.google.com/store/apps/details?id=io.nightjarsolutions.lorack)
-
 ## Get Started
 
+- **[Quick Start](/getting-started/quickstart)** — Connect to ChirpStack in 5 minutes
 - **[User Guide](/user-guide)** — Complete walkthrough of every feature
-
-# LoRACK! User Guide
+- **[Troubleshooting](/getting-started/troubleshooting)** — Common issues and solutions
 
 ## Key Features
 
@@ -34,9 +32,12 @@ LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It conn
 
 ## Documentation Sections
 
+- **[Getting Started](/getting-started/quickstart)** — Setup and connection
 - **[User Guide](/user-guide)** — Feature-by-feature walkthrough
+- **[Field Tech Access](/field-tech/overview)** — Invite management for field technicians
 
 ## Supported Platforms
 
 - iOS 17.0+
 - Android 7.0+ (API 24)
+- Web (modern browsers)
