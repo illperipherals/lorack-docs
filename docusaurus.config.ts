@@ -70,10 +70,6 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Quick Start',
-              to: '/getting-started/quickstart',
-            },
-            {
               label: 'User Guide',
               to: '/user-guide',
             },
