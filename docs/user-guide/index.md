@@ -6,6 +6,8 @@ description: Complete guide to using LoRACK! for LoRaWAN management
 
 # LoRACK! User Guide
 
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0f01e941-8476-4a08-b746-aa6cfe463298" />
+
 ![alt text](/img/image.png)
 
 Welcome to LoRACK! LoRaWAN Manager! LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. This guide walks you through everything you need to know to get started and make the most of the app.
@@ -514,12 +516,5 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 | Adjust a field tech's credits or app access | Profiles > Edit Access on the profile card |
 | Compare underperforming devices | Devices > Compare mode > Compare |
 
----
 
-## Further Reading
 
-- [Quick Start](/getting-started/quickstart) — 5-minute connection setup
-- [Troubleshooting](/getting-started/troubleshooting) — Detailed troubleshooting for connection and app issues
-- [Build Mobile](/building/build-mobile) — Building native Android and iOS packages
-
-> **Technical aside (dry humor):** Streaming ChirpStack on Android without a server is like trying to sip coffee through a fire hose that keeps deciding it's actually a bucket. gRPC-Web wants a steady stream, Android's network stack wants to buffer everything forever, and you're left building a tiny browser inside your app just to convince it to drip bytes. It works… eventually… in the same way duct tape counts as a protocol.
