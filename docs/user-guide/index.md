@@ -6,10 +6,6 @@ description: Complete guide to using LoRACK! for LoRaWAN management
 
 # LoRACK! User Guide
 
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0f01e941-8476-4a08-b746-aa6cfe463298" />
-
-![alt text](/img/image.png)
-
 Welcome to LoRACK! LoRaWAN Manager! LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. This guide walks you through everything you need to know to get started and make the most of the app.
 
 ---
