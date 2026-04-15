@@ -6,8 +6,6 @@ description: Complete guide to using LoRACK! for LoRaWAN management
 
 # LoRACK! User Guide
 
-![alt text](/img/image.png)
-
 Welcome to LoRACK! LoRaWAN Manager! LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. This guide walks you through everything you need to know to get started and make the most of the app.
 
 ---
@@ -199,12 +197,21 @@ Each rule has a **severity level** (Info, Warning, Critical) and can be enabled 
 
 ## Part 5: QR Code Scanning
 
-Tap **Scan QR Code** on the Home screen and point your camera at a QR code on device packaging. LoRACK! will parse the DevEUI and JoinEUI from the code.
+Tap **Scan QR Code** on the Home screen and point your camera at a QR code on device packaging. LoRACK! will parse the device identity and use it to speed up lookup or onboarding.
 
 - If the device already exists on any of your configured servers, the app navigates to its detail screen
 - If the device is not found, the app offers to create it with the scanned information pre-filled
 - If the QR code contains an AppKey, it will be captured and pre-filled during device key setup
 - Supports LoRa Alliance TR005 device identification QR codes (e.g., `LW:D0:...`)
+- Supports SEEED SenseCAP label, key-value, and JSON QR formats
+
+For SenseCAP labels and JSON payloads, the scanner can pre-fill:
+
+- **DevEUI**
+- **JoinEUI / AppEUI**
+- **AppKey** when encoded
+- **Model information** used to guide device-profile selection
+- **Device code** for the BLE provisioning workflow when present
 
 This is the fastest way to look up or onboard devices in the field.
 
@@ -217,7 +224,75 @@ If the device shows **Not activated**, make sure the Walker is set to **OTAA** a
 
 ---
 
-## Part 6: AI Troubleshooter
+## Part 6: SenseCAP BLE Provisioning
+
+LoRACK! includes a dedicated **SenseCAP S210x BLE Provisioning** screen for onboarding compatible SenseCAP sensors directly over Bluetooth.
+
+### When to Use It
+
+Use this workflow when you are standing near a new SenseCAP sensor and need to:
+
+- write or confirm LoRaWAN credentials over BLE
+- create the matching device in ChirpStack during the same session
+- verify the device joins and starts reporting after provisioning
+
+You can enter the provisioning flow from:
+
+- a device action menu using **SenseCAP Provision**
+- an onboarding flow after scanning a SenseCAP QR code
+
+### Provisioning Workflow
+
+1. Open **SenseCAP Provisioning**
+2. In **1) Scan**, tap **Start Scan** and choose the nearby SenseCAP device from the BLE list
+3. In **2) LoRaWAN Settings**, set the frequency plan and join type
+4. Review or enter the LoRaWAN credentials:
+   - **DevEUI**
+   - **Device Code**
+   - **AppEUI / JoinEUI**
+   - **AppKey**
+   - For ABP, **NwkSKey**, **AppSKey**, and **DevAddr**
+5. If the app cannot pre-fill the keys automatically, tap **Fetch Keys** or enter them manually
+6. In the **ChirpStack** section, optionally enable **Create in ChirpStack** and pick the destination application and device profile
+7. Tap **Provision** and confirm
+
+The screen shows a simple progress stepper for **Connect**, **Configure**, and **Provision** so you can see where the session currently is.
+
+### BLE and ChirpStack Options
+
+The provisioning screen also exposes a few operational toggles:
+
+- **Create in ChirpStack** to add the device during provisioning
+- **Monitor Events** to watch for post-provision frames and events
+- **Auto Read Config** to pull the current device configuration after connection
+- **Auto Open Device** to jump straight to the created device after a successful run
+
+Advanced settings let you adjust platform, sub-band, retry policy, Bluetooth password, channel mask, ADR, and data-rate limits when the deployment requires it.
+
+### Reboot and Join Monitoring
+
+Some SenseCAP devices need a reboot after credentials are written before they rejoin the network.
+
+- The provisioning screen surfaces a reboot banner when rejoin is still pending
+- You can trigger **Reboot Device** from the app or confirm a manual reboot with **I Rebooted**
+- The app then tracks join progress and shows whether the device is waiting, joined successfully, or still timing out
+
+If the device does not join right away, first confirm gateway coverage and then verify that the frequency plan, AppEUI, and AppKey match the target network.
+
+### Field Tech Defaults
+
+Field-tech invites can pre-configure SenseCAP provisioning defaults so technicians do not have to choose them manually every time. An invite can include:
+
+- default **frequency plan**
+- default **sub-band**
+- default **platform**
+- onboarding credits for how many devices the technician may add
+
+These defaults are especially useful for Android field deployments where many devices are provisioned in the same region and network.
+
+---
+
+## Part 7: AI Troubleshooter
 
 > Requires MoD AI configuration in your profile settings.
 
@@ -236,7 +311,7 @@ Chat history is saved locally (up to 50 messages per session).
 
 ---
 
-## Part 7: Photos and Contacts
+## Part 8: Photos and Contacts
 
 You can attach photos and contacts to devices, applications, and gateways. This is useful for tracking who is responsible for what equipment, or for documenting installation details with photos.
 
@@ -253,7 +328,7 @@ Backups live in **Settings → Backups**.
 
 ---
 
-## Part 8: Codec Helper
+## Part 9: Codec Helper
 
 The Codec Helper lets you test and debug payload decoder scripts — the JavaScript functions that turn raw LoRaWAN bytes into readable sensor values like temperature, humidity, or battery voltage.
 
@@ -294,7 +369,7 @@ If your codec defines one of these functions, the helper calls it automatically.
 
 ---
 
-## Part 9: Command Library
+## Part 10: Command Library
 
 The Command Library stores reusable downlink command templates so you don't have to rebuild them every time.
 
@@ -308,7 +383,7 @@ The Command Library stores reusable downlink command templates so you don't have
 
 ---
 
-## Part 10: Site Visits
+## Part 11: Site Visits
 
 Site Visits provide a structured workflow for field technicians inspecting devices on-site.
 
@@ -342,7 +417,7 @@ When you're done, generate a shareable text report. The report screen offers thr
 
 ---
 
-## Part 11: Comparing Devices
+## Part 12: Comparing Devices
 
 When troubleshooting, it helps to compare similar devices side by side.
 
@@ -354,7 +429,7 @@ The comparison view shows health scores, battery levels, connectivity, signal, a
 
 ---
 
-## Part 12: Settings and Preferences
+## Part 13: Settings and Preferences
 
 Access Settings from the gear icon on the Home screen.
 
@@ -397,7 +472,7 @@ Manage server profiles from the Home screen using the profile dropdown or **Go t
 
 ---
 
-## Part 13: Field Technician Access
+## Part 14: Field Technician Access
 
 Field Technician Access lets admins create limited, read-only invites for field techs who need to view and occasionally onboard devices — without giving them full admin control.
 
@@ -475,7 +550,7 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 
 ---
 
-## Part 14: Tips for Getting the Most Out of LoRACK!
+## Part 15: Tips for Getting the Most Out of LoRACK!
 
 **Use multiple profiles** — If you manage staging and production ChirpStack servers, create a profile for each and switch between them from the Home screen.
 
@@ -513,3 +588,4 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 | Import a field tech invite | Profiles > QR scanner icon |
 | Adjust a field tech's credits or app access | Profiles > Edit Access on the profile card |
 | Compare underperforming devices | Devices > Compare mode > Compare |
+

@@ -2,8 +2,6 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const buildId = new Date().toISOString();
-
 const config: Config = {
   title: 'LoRACK! Documentation',
   tagline: 'Mobile LoRaWAN Network Management via ChirpStack',
@@ -18,10 +16,6 @@ const config: Config = {
 
   organizationName: 'illperipherals',
   projectName: 'lorack-docs',
-
-  customFields: {
-    buildId,
-  },
 
   onBrokenLinks: 'warn',
 
@@ -75,6 +69,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
+            {
+              label: 'Quick Start',
+              to: '/getting-started/quickstart',
+            },
             {
               label: 'User Guide',
               to: '/user-guide',

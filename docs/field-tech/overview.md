@@ -17,6 +17,7 @@ An admin creates an invite from the **Profiles** screen. The invite is a QR code
 - A friendly label for the field tech
 - Optional: which applications the field tech can see
 - Optional: how many devices the field tech is allowed to add ("onboarding credits")
+- Optional: SenseCAP provisioning defaults such as frequency plan, sub-band, and platform
 
 ## Creating an Invite (Admin)
 
@@ -26,7 +27,8 @@ An admin creates an invite from the **Profiles** screen. The invite is a QR code
 4. Select a tenant
 5. **Restrict applications** (optional) — check the specific applications the field tech should see. Leave all unchecked to allow access to every application in the tenant.
 6. **Set onboarding credits** (optional) — enter the number of devices the field tech is allowed to add. Leave at 0 if they should have view-only access with no device creation.
-7. Tap **Create Invite**
+7. Expand **Provisioning Defaults** (optional) to pre-configure SenseCAP frequency plan, sub-band, and platform for the technician.
+8. Tap **Create Invite**
 
 The invite is cryptographically signed using your API token, so any tampering during transit will be detectable.
 
@@ -41,6 +43,8 @@ The invite is cryptographically signed using your API token, so any tampering du
 5. Accept to create the profile
 
 The profile appears in the Profiles list with a **read-only badge**. If the invite included app restrictions or credits, those are shown as badges on the profile card.
+
+If provisioning defaults were included, the SenseCAP BLE provisioning screen uses them as the starting values for new onboarding sessions.
 
 ## What Field Techs Can Do
 
@@ -59,6 +63,20 @@ The profile appears in the Profiles list with a **read-only badge**. If the invi
 When a field tech has onboarding credits, a **credit badge** appears on the Devices screen's add button showing the remaining count. Each time the field tech successfully creates a device, one credit is deducted. When credits reach zero, the add button disappears.
 
 Credits are tracked locally on the field tech's device. An admin can adjust credits after import by tapping **Edit Access** on the profile card in the Profiles screen.
+
+## SenseCAP BLE Onboarding
+
+Field-tech access is designed to support in-field SenseCAP onboarding on Android.
+
+With a signed invite plus onboarding credits, a technician can:
+
+- scan a SenseCAP QR code to pre-fill DevEUI, JoinEUI/AppEUI, AppKey, and model details when present
+- open the BLE provisioning screen and connect to the nearby S210x sensor
+- use the pre-configured frequency plan, sub-band, and platform from the invite
+- create the device in ChirpStack once provisioning succeeds
+- consume one onboarding credit only after successful device creation
+
+This keeps the in-field workflow fast while still constraining what the technician can see and how many devices they can add.
 
 ## Editing Access After Import
 
@@ -87,6 +105,6 @@ Field Tech imports invite (ServersScreen)
 
 Runtime enforcement:
   → ApplicationsScreen filters by allowedApplicationIds
-  → AddDeviceScreen checks credits > 0 before creating, decrements after
+  → SenseCAP provisioning and add-device flows check credits > 0 before creating, decrement after successful create
   → DevicesScreen shows Add Device FAB only when credits remain
 ```

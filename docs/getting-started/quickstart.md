@@ -72,11 +72,25 @@ To enable AI-powered device diagnostics:
 ## Next Steps
 
 - **Scan a QR code**: Tap the QR icon on the Home screen to quickly find devices.
+- **Provision a SenseCAP sensor over BLE**: Use the SenseCAP provisioning flow to scan nearby S210x devices, write credentials, and optionally create the device in ChirpStack.
 - **Check device health**: Open any device; Health is the default tab.
 - **Set up alerts**: Go to Alerts to configure monitoring rules.
 - **Add contacts**: Attach photos and contact info to devices for field identification.
 - **Explore the AI Troubleshooter**: Ask natural language questions about device issues.
 - **Inspect raw data**: Use the Data tab (Frames/Events); tap a field title to copy its value.
+
+## Optional: SenseCAP BLE Provisioning
+
+For SEEED SenseCAP S210x deployments, LoRACK! can handle provisioning directly over Bluetooth.
+
+1. Scan the device's QR code to pre-fill identity and key material when available.
+2. Open **SenseCAP Provisioning**.
+3. Scan for the nearby BLE device and connect.
+4. Confirm the frequency plan, join type, and credentials.
+5. Optionally enable **Create in ChirpStack** and choose the application and device profile.
+6. Tap **Provision** and wait for the join-state banner to confirm the device has rejoined.
+
+Field-tech invites can also pre-seed SenseCAP provisioning defaults such as frequency, sub-band, and platform.
 
 ## Troubleshooting Connection Issues
 
