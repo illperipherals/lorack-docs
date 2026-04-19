@@ -1,0 +1,69 @@
+---
+id: get-latest-ai-insight-for-device
+title: "Get latest AI insight for device"
+description: "Get latest AI insight for device"
+sidebar_label: "Get latest AI insight for device"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU1v2zgQ/SvEnBKAkZy2J928i7Rwm10EaYMWSI3FWBpbbCiSJUfeegX992Ik2bHrHBZ72pNEcj4eZ94bdsC4SVA8wnwBSw2JyjYa3kHx2MGKMFKct1xD8bjsdQcYzAfaHXaWGgJGbIgppsHFOCggINegwWFDUEBFW1PSTWtAQ6TvrYlUQcGxJQ2prKlBKDrgXRDjxNG4DfQSOlIK3iVKcv5qNpNPRamMJrDxkuitJWJlXDKbmkFD6R2TYzHEEKwpUQzzb0msu/NsfvWNSoa+73sNb2bX5xn+MCkZt8mN26I1lSojVeTYoE3/PZ+GEH2gyGa8G8Xo40tF0MCGrWzdiMn9VJAD4NfngBcuteu1KQ05VoFiIxfw7n8A9s052D/9vnlJ4RaNxZWlIdSp3TtiZZEpsZov9i5q7aMayQUaGuLaV1DAhgbMQsECcgwm317naPJ9orw7ELIHIXzc7snbRgsF1MyhyHPrS7S1T1y8ns1m8CukWzmW9GR9aKSuoo/nCKnIc4ltSkoZ/cAmWMpK35wFuou+aktZqItIwWJJ6m/DtaooWL+jSj3c315CfyTOj9KqsRvHEj20RPLDJC5Zj0agp5+3PjbIUMD7z5/O4EgoH80/AzlUTVhRVK1oQP02eCv2T+Qy6PXJNDgkHzdBj6NgDPA8DL5cze8WV6PBaeKHRFHN7xbqiXbqgrJNptpE8a8syy6zgRPGrf2QaKLZrb+f//5BfZyqLM6gQbo5RrzOZtlLjRu8Etn1lbSXKpWOIkjSSq12imtSjV8ZSwpDGMgmeBS2XOuvTtSEJSetapPYx51KO1dqtR5GUnIYUu3leL44XqGrJs6qEP1aokcKPpkhRIWM2VcntQ0+cYODMqfS/QsRnNz00BGmH5wHi2YIPFC0mwTyKO2Sol2DBjRD10aZgIbieXIvNUitxKHrVpjoIdq+l+3vLUV5LZYathjNIGDRUmWS/FdQrNEmOsN2mEZwcT89CpcK9MuY99RyQpst2lZWoOGJdicPTL/s9Z5yAmI8n5clBT7yPBt/Iq7DAHl3I6rAU1b/IqEh+ououm60+CQq6fsDyEE1ArDvfwL+cI6A
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get latest AI insight for device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/ai/insights/{deviceEui}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get latest AI insight for device
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"deviceEui","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Fleet insight","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"404":{"description":"No insights available"}}}
+>
+  
+</StatusCodes>
+
+
+      

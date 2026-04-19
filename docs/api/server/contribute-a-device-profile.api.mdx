@@ -1,0 +1,68 @@
+---
+id: contribute-a-device-profile
+title: "Contribute a device profile"
+description: "Contribute a device profile"
+sidebar_label: "Contribute a device profile"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVsGO2zYQ/RViTglAS96mJ92cbQpss0UX3t22gGMENDW2uEuRDEl5oxj692Io2ZbXbg65tL7YGg4fZ4bvPWsHUWwCFAv4BbdKIrvzdq00BlhyCCgbr2ILxWIHKxQe/ayJFRSLZcd3IJz6iO0hsuTg8UuDIb63ZQvFLj0qjyUU0TfIQVoT0URaEs5pJUVU1uRPwRqKBVlhLehXbB1CAXb1hDICHwEtYIumtB441LZEnRY3yhoKCPkn+kAPSw7OW4c+KgyEOOw6YofoldlAt8e5tDIgX9x0POvSsrQlynljoqrxPIEDmqamZp4CcJCiRWPws3YOlvvN99IrFy+Cr0SM6NvrCmsVom8vF4giNB5rNDGcj7Tjw72fLaQPtR6cNaEf3k/TKX2VGFJRqWm4tiZ6tWoilsz1pIEfvuL+0J8vnTPvOcW2QqsyoTH0PjHgh/l0yo0e7nyINCQVNYU+UMp8mMmh2qvzan9XISizyZVJ9TLpsUQTldDhf1Dwu/OCb0xo1mslFZrIHPqaGkhy+i+L7fi/so0JVvZWdWRdjbGyJRTgbEgVCPIkyIVT+fYq7/Mnbm9t5Gx+iz4kY2u8hgKqGF2R59pKoSsbYvFuOp3C6zJuaZnOR20daQvICI8IochzwlYSQ4ZfRe00ZtLWZ0B33paNTGx+49FpIZG9qFixEp22LZbscX77FrqRC9/TwPuZjr34MFg6n1pLaVAMScCHH79aX4sIBfz218NZOQRlvfrW66tCUaJnDTGZvU+7WbTPaDIyjrHtHw7vg8BBEVwPAByMSKX8PZnd3Uz6hNODHwN6Nru7Yc/YsjeYbTLWBPSfsyx7myWSEN/mx/+VD/1Qx55+tNXByo+BvYOPUkbGfYye+vVgy2MbPqaeu+8I/NR0jy5LjSiztmliA+tv7Xx2/ZHdD3ShKQCH7aG4q2yaXWJg2hVQryfEUyxZGCHQ9Eq2almskNV2pTQy4RxbW58Gy0QTK/7JkLiFjIGzSoVofctCayRna40YWTDChcrS8uxm/CRM+Up9zKOzQSWIUkSRfTJEEhJiLZJRDBz4voJPmjywKuLXmDstVMJMMtsN4l4Q5WheV2n3qcCXHGg2lLXbrUTAR6+7jsJfGqQrWyw5bIVXYkVXQa8ze86SIzxjOxSMJk4eqBZK103P9FdeSA7Q75hJiS5+N3c5Mqu7P+5JiavhbYnICwV48ULEFS9QAHCwaSZJ9Sm2Ay3MphGbnqeESeQSp3J8pf3U1V6pph1VuNv1GQ8k764DPrSS5A7dsuu6fwCDVoR+
+sidebar_class_name: "post api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Contribute a device profile"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1/device-profiles"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Contribute a device profile
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["vendor","model","region","macVersion"],"properties":{"vendor":{"type":"string"},"model":{"type":"string"},"region":{"type":"string"},"macVersion":{"type":"string"},"codecRuntime":{"type":"string","enum":["js","cayenne_lpp"]},"codecScript":{"type":"string"},"batteryChemistry":{"type":"string"},"measurements":{"type":"object"},"tags":{"type":"object"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Contributed profile","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Request validation error","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

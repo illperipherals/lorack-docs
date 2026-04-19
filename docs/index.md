@@ -35,6 +35,7 @@ LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It conn
 - **[Getting Started](/getting-started/quickstart)** — Setup and connection
 - **[User Guide](/user-guide)** — Feature-by-feature walkthrough
 - **[Field Tech Access](/field-tech/overview)** — Invite management for field technicians
+- **[Interactive Server API Docs](/technical/server-api-docs)** — OpenAPI-powered API explorer setup
 
 ## Supported Platforms
 

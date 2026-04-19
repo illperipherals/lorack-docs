@@ -1,0 +1,69 @@
+---
+id: pull-battery-reading-history-for-a-device
+title: "Pull battery reading history for a device"
+description: "Pull battery reading history for a device"
+sidebar_label: "Pull battery reading history for a device"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVU1v20YQ/SuLOdnAipSbnnhTCrd14wKGEqMFFKFYkSNx4+XuZneohiX434shKYm25CAFAtQXmeTMmzcfb6YFUrsI2Qp+1ZFcaGAtIWJeB00NZKsWNqgChkVNJWSrdSdbUF6/w+b4Zi3Bq6AqJAyxd9EWMvCKSpBgVYWQQYF7neNtrUFCwM+1DlhARqFGCTEvsVKQtUCNZ+NIQdsddBysx/pcY2hOYFHbHOF1RwlbFypFHFcRzkhX+Dqa0ZWmS2jaEu4wQMcpBoze2YiRDX6Yz/mnwJgH7Uk7hn2riDA0IqAqtN2JciyohNxZQkvsorw3Olfskn6K7NeeB3abT5gzJR+cx0B6iDoCx4mlCkFxBE1YxUsIp1qvgMsQSVUeJBQY9B6Le9yj4dxdHfqSMhUdaZiD5+FP7t9YcAl7Z0jtcOJg62qDgYtfG6M2Boch6CSYnsq3WD7jfubQHbM5H6hpfpfGDUgTBzr0cjlUHLrhT8KP85vzxv+uY9R2l2q7V0YXIg9YoCWtTPx+zccQXPg66Vs2WY5zCgfCb84J39lYb7c612hJeAwVJ+Ds/0y27+yU5kNtjNhcVpXYuiCUGNYKSKiQSldABjvs6fDyySBVXqf7m3R0Skew2UFJaXvcSx2rAMP+sMPqYCCDkshnaWpcrkzpImVv5vM5vCR6z5+ZCxrnK64f75oTQszSlLF1jjHBL6ryBpPcVWdAD8EVdc4P4iqgNypH8bemUhTojWuwEI/L+2voJjv6PbdkqPp0Ux9Lz/EPy42fByOQ4z8/H3T72x8fzugwlAv6n34IRImqwCBqnnXxtvcW5J7QJiys6VE4raf+Je8nhhsATov3z9ni4W42GDwP/BgxiMXDnXjCRlxhsktEHTH8lSTJddKPkbZbNyylYZzu3XLx0zvxfqwyO4ME7uaAeJPMk0uN670imu2M24uFiBMEDlqITSOoRFG5jTYolPf97DEfoWoq5UfLqlE5RXmcztjYXIqtQSQRrfKxdPx5cTd9UrYYB1j44LaMHtC7qHuIQpFKPlqurXeRKtUrcCzdf5HGs5SPrSH8Qqk3SvcR+lltR9msuG9cvRuQcLpiL8UDErLTWV9L4Aqyd9tuVMTHYLqOXw/nljVV6MiLvIBsq0xECU/YTM75XpmaqfXqecX2cKxPtmt+CHq4EJeCvMj/uOLgajkex2sB8nJdDnNsm2nMA5lT9t26k4f5ZhLD90Weo5+yPdupzP64un65ZQmq5xJ6odce/SKrth0sPrAku+5IspcoE+y6fwHjF2uJ
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Pull battery reading history for a device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/history/battery-readings/{deviceEui}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Pull battery reading history for a device
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"deviceEui","required":true,"schema":{"type":"string"}},{"in":"query","name":"since","schema":{"type":"string","format":"date-time"}},{"in":"query","name":"limit","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Battery reading history","content":{"application/json":{"schema":{"type":"object","properties":{"readings":{"type":"array","items":{"type":"object","required":["timestamp","derivedLevel","source","chemistry"],"properties":{"timestamp":{"type":"string","format":"date-time"},"voltage":{"type":"number","nullable":true},"level":{"type":"number","nullable":true},"derivedLevel":{"type":"number"},"source":{"type":"string"},"chemistry":{"type":"string"}},"title":"BatteryReading"}}}}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

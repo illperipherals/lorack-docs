@@ -1,0 +1,68 @@
+---
+id: create-user-admin
+title: "Create user (admin+)"
+description: "Create user (admin+)"
+sidebar_label: "Create user (admin+)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV99v2zYQ/leIe0owRXbWPenNLToga4YGTooOSI3hLJ0tNhTJkpRdzdD/Phzp2HLsZO1e1of5xRJ/HO8+ft/daQMBlx6Ke/jgyXmYZeCpbJ0MHRT3G5gTOnKTNtRQ3M/6bANo5TvqdiOzDBx9acmH16bqoNjEV+mogiK4ljIojQ6kA0+htUqWGKTRo8/eaB7zZU0N8lPoLEEBZv6ZygDZwNA9tJ6cxoYgA4ver42reIVRxC5bZyy5IMmznd3avU0fnNRL6DOgBqU6ObOze2oynnQ0kQHptmH/zFqTgwywaqSGDBrUuIwjgcpay1IiD68krcmxy0EGthhhn7LxPgNfGptC2B6DzmEHGchAjT8F0WHgafZ5JwfwQwZLDLSO5gNhA7M+A3k6eEuukd5Lo086gVUl2SaqmxPuHLuhjaZ4vch3uHYy0A65Wd/3e3Cm5E3rSrplYKBPP97prdE+nfLzeMx/FfnSSRtjK+CNIwxUCaaCWMtQi8nNlQjmgTjyb2YkKvV+EXXwMvDP4PZviJiBbpXCOcfP+vmfez8I9zLAMsjVMMi5MYpQs5tlItwknDp8YVyDAQqoMNBFkE1EvLXV925R6MO1WUr9zZuO6NQfXv+VXhjgtP4PtxuVc3w/fT9LkvzllAqnqTCIFSpZxasX5Jxx3yPBl/1K5k74tY/yLS+ZbjMGPHp7eezt70wzvRxJHf0VpaOKdJCo/A/g8Ktjh6+0bxcLWUrSQex18h8722cnc3FKxWdRaT+dc5aiUJsKCrDGx6OROwoYoZWj1eWoje0IdyNuxU+chFunoIA6BFuMRsqUqGrjQ/FqPB7D01OveVpUtCJlbMNgMMv3FnwxGrFtWZLP6Ss2VlFemubI0I0zVVtG8p45sgpLShWlIqtMR5X4ML0+h37QOd0yvgnCYf+0w5HP59DiMs4jcRFk24dfH2X828e7I3fYlHHyrySnmrAiJ1omrngdd6cql3O6GLZq+7weBzmxs7lkgNNErFPwx8Xk5uoiLTg8mLNFrKIP1Ikzypd5vNI/8zw/zyMnmF7TfS/4NoF62JENMnKqf/uBff+1H0ulb1fhHovU/SCaYVmRB5sPSwenKg56YSIYW/5em+nkzTtxu2UCB8ilkpxPUV/m4/wUueIuT2pxwRSkSviBBQamEvNOhJpEY+ZSkUBrxcK4JANsQ5190ixTLIPPRC19MK4TvtNlJhaKKAiv0fra8PTkaviGumJiy5KEdWbB1h1Z42U0UWHA/FMsSqysBqPkt+g/o8WD6HbYBvoaRlahjMaidDZbmXI9lwzUJaQ2J345MBQ8t9nM0dMHp/qeh7+05PhrYpbBCp1MxYg/Jh7Zx/f5QB37lxLXxR17wMtV++SWUxJjLacdk7IkG15cOxskm5v3t6yp+fZbpTEV73G4ZrLhGgqADExEIuo3jm1AoV62uOS1yWbsBw6F9UTFByzV3cDDzSatuGOh9j1k21BSkY0V9W+jt6yZ
+sidebar_class_name: "post api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create user (admin+)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1/users"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create user (admin+)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","password","role"],"properties":{"username":{"type":"string"},"email":{"type":"string"},"password":{"type":"string"},"role":{"type":"string","enum":["owner","admin","manager","technician","viewer"],"title":"UserRole"},"scopes":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string","enum":["application","gateway","team"]},"id":{"type":"string"},"permissions":{"type":"object","additionalProperties":{"type":"string","enum":["none","read","write","admin"]}}},"title":"ResourceScope"}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Created user with API token","content":{"application/json":{"schema":{"allOf":[{"type":"object","properties":{"id":{"type":"string"},"username":{"type":"string"},"email":{"type":"string","nullable":true},"role":{"type":"string","enum":["owner","admin","manager","technician","viewer"],"title":"UserRole"},"scopes":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string","enum":["application","gateway","team"]},"id":{"type":"string"},"permissions":{"type":"object","additionalProperties":{"type":"string","enum":["none","read","write","admin"]}}},"title":"ResourceScope"}},"active":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"lastLoginAt":{"type":"string","format":"date-time","nullable":true}},"title":"UserInfo"},{"type":"object","properties":{"token":{"type":"string"}}}]}}}},"400":{"description":"Request validation error","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: get-fleet-alert-history
+title: "Get fleet alert history"
+description: "Get fleet alert history"
+sidebar_label: "Get fleet alert history"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVcFu2zgQ/RViTi3ASM52T7p5F22RbRYI0ga7QGosaGpssaFILjnyVivw34uhbMeJ00svPdmk3rwZzbw3moDUNkFzD+8sIsFKQkI9REMjNPcTrFFFjMuBOmjuV1lOoIL5gOPxZiUhqKh6JIyphBgHDfw7YBxBglM9QgPJOI0gIekOewXNBDSG8oCicVuQsPGxVwQNtIrwgkyPkDndS2zW9IZeYjOOcIsRMpcVMQXvEiYG/LJY8E+LSUcTyHimXVqMJDqTyBd67R2hIwaqEKzRioH1l8To6TydX39BTZBzzhJ+XVyeZ/jTpGTctjZup6xphY7YoiOjbPrxfBJC9AEjmfndMEYfz3vKRZEhy1dvGXK7b8ix4DfnBV+5NGw2Rht0JALGnl/Au59cbJbPynyPJDYsWKGezbBH6nwLDWyxJFesU6hVMPXusi4xdYnhASSMu4Nsh2ihgY4oNHVtvVa284maN4vFAp6nv+bHosUdWh967gpL9ZEhNXXN3EZjqvCr6oPFSvv+jOgm+nbQfBCvIgarNIr/DHWixWD9iK24u71+DfnElh+50XMvT815bCjnP3iDzzMI5P7Pu4PP/vjr01k5TOWj+b+MVnSoWoxiYAWL30q0IP+AroIsn+yBY/L5EuRs25ng0bd/Xyxvri5mwNPEdwmjWN5ciQccxSustpUYEsZ/qqp6XRVxGLfxJdFeJNf+dvn7B/Fx32UOBgk8zZnxslpULw2uRCW0mwseL7YinTBw0lasR0Edit6vjUWhQhAbH0s9Qg3Uyc+OvaA0JXkQnkij03IvyeRUSJ3nx8ur05NyLYvGaBQh+g2zRww+mULRKlLVZ8e9DT5Rr4qv9q37vuCfvOBxEIRfqQ5WmcJXlDntzXDPU+JeXfLaLVtfwt4SKwncFgZN01olvIs2Z76eVzAbpTVJrS220GyUTSjhAceTFb9TduAKiiW+gz0s8Efsig/RMHj+0BzEwxnnoKXWGE6jztYQsxz9//4t61s91eczMxT2g3TdeMI9TTPiE+s9ZzhUXvQPeZVz/gbdTXpc
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get fleet alert history"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/fleet/alerts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get fleet alert history
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"query","name":"since","schema":{"type":"string","format":"date-time"}},{"in":"query","name":"limit","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Alert history","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

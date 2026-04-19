@@ -1,0 +1,70 @@
+---
+id: update-user-role-scopes-active-admin
+title: "Update user role/scopes/active (admin+)"
+description: "Update user role/scopes/active (admin+)"
+sidebar_label: "Update user role/scopes/active (admin+)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV01vGzcQ/SvEnGx0rbWbnvamBCngxgUM2UYLOEIxWo60jLkkQ3KlqML+92LItT4s5aNA0PZQXyyRnOHM45s3ow1EXASoHuEhkA8wLSBQ3XkV11A9bmBG6MmPu9hA9Tjtiw2gU+9ovV2ZFuDQY0uRzdlEGajAYWygAIMtQQVKQgGePnbKk4Qq+o4KCHVDLUK1gbh2fCpEr8wCevbJhynE11au+cRL29qaSCbyFjqnVY1RWVN+CNbw2pFrO/tAdYQCnLeOfFQUklur6TiAAsh0LWNiV4Y8FICyVQYKaNHgIq1EqhujaoW8vFS0Is/YRRXZYwJzws77ArCOarl/zcxaTWh4L9TW5VCGPfQe11CAitSGryeQdz+fwB44UMACI62S+0jYwrQv+GWOH6AAR75VIShrTgaBUir2ifr2RDjHYRhrKDEAmQgrryJtUZ32fb8DbkLBdr6mOwYG+vzHlsFZE/ItP15e8j9JofbKpdwqeHASI0nRhfQ+34kgn4GHL8nUPrFJLSp9Cg3TaY0zTpNJzFn9E/T7n2JfodiXK7T2xLwax1OXz61vMUIFzL2LqNqEeJep+HdMNIZ4YxfKfLPREZ36w+e/NnMLuXh+OlUvkyywYolayfR6gry337F2srsT8r4L9C0fmQy1vY326jjaX5kpZlEqk+IVtSdJJirU4T8Q8KvjgK9N6OZzVSsyUeyo/i8H2xcnVTOJpmA1KrNalLkixFmqnx/OWXsoNlZyZ+9SMNzfKyjRqXJ5VbKDUG6U7IEHCL98HgY6r6GCJkZXlaW2NerGhli9ury8hJfB3PC2kLQkbV3LGPG8sfMQqrJk36qmMKJP2DpNo9q2R45uvZVdnTh95slprEmsVGyEJKftmqR4mNycQ7837Nwx7BnZ/ZFnCy/fD8PMkhQiHYJi+PDzc4H+8tv9UTjsynr1Z66yhlCSFx3zWbxO1iLaJzKjNCzsTVc7xU6LLNnsLjvYDVe/X4xvry/ygRevy886vr0WT7QWZzRajNJL/zEajc5HiSrMuslu1HqbQd2NRrsWNEjk8+iWe8rjXoj7XYAlf6deh0rf96kpsDxxhgNXb+xk/OaduBuel6PmzkY+5FSuRpejU4xJVoH0/IJ5RVKEPQ+crRSztYgNidbOlCaBzom59Zny2MWmeG+4JLGOoRCNCtH6tQhrUxdiromiCAZdaCxvj6/3v6GRzFZVk3Deztm7J2eDSi4kRhy9Tz3E2RBbTOU9vNm3191Bwlu4I32KpdOokv9UIpuhJrkjK8buCvKgwgpZKcnzAWPEJzabGQZ68LrvefljR57H/WkBS/QqN5XHDUgV+LOEao460FEwWymDs8kwoJ8Lbv2ngnwmimGeLlF3/A0KeKJ1/oWQeDGQm2/PG2/yHRf3bL4zPJJOlopsMa5rcvGLZ6d7enb7wBU7G35otFayiccVDxO4yjHalHL+ycBrG9BoFh0u+Gx2meaIw7J9oREH5XKAwmaTT9yzDPT9FpQkC4xL3/8F71uwzA==
+sidebar_class_name: "put api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update user role/scopes/active (admin+)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1/users/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update user role/scopes/active (admin+)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"role":{"type":"string","enum":["owner","admin","manager","technician","viewer"],"title":"UserRole"},"active":{"type":"boolean"},"scopes":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string","enum":["application","gateway","team"]},"id":{"type":"string"},"permissions":{"type":"object","additionalProperties":{"type":"string","enum":["none","read","write","admin"]}}},"title":"ResourceScope"}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Updated user","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"username":{"type":"string"},"email":{"type":"string","nullable":true},"role":{"type":"string","enum":["owner","admin","manager","technician","viewer"],"title":"UserRole"},"scopes":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string","enum":["application","gateway","team"]},"id":{"type":"string"},"permissions":{"type":"object","additionalProperties":{"type":"string","enum":["none","read","write","admin"]}}},"title":"ResourceScope"}},"active":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"lastLoginAt":{"type":"string","format":"date-time","nullable":true}},"title":"UserInfo"}}}},"400":{"description":"Request validation error","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: list-users-admin
+title: "List users (admin+)"
+description: "List users (admin+)"
+sidebar_label: "List users (admin+)"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVsFuGzcQ/RViTja6XslNT3tTi7Rw4wKGnSAFHKMYkSMtYy7JkrNyVGH/vRiuZMmRDLQBip5skcM3j49vZnYDjMsMzT18yJQyPFSQSffJ8hqa+w3MCROlWc8tNPcPQ7UBjPYdrZ9XHiqImLAjluNyxHpo4M+e0hoq8NgRNJCCI6gg65Y6hGYDvI6ynjlZv4QKyPedsAhPnhJUgKazHiro0OOyrDDp1lttUZZXlp4oCVu27ARJ6N9KlkEoJcox+ExZcn0/ncofQ1knG9kGv43PytnMUIEOnsmzRGGMzmqUqMnnLKGbY9qYEsrtLFOXD9bD/DNpAYwpREpsRwLWHF95qKDPlEZ9TmxSh9adUsr3zuFc7sypp6Eatf1vJZWXC5Hyt0sw7r5O8kB2qGCJTE8Fngk7eBiq1zSMlDqbsw3+JAk0xgomupsTdI5p+ODFp4nQQAVPyTI9K/cwDMNenFvKoU+a7kQYkB3UbFeHl5yH4Ai90NSJkMnM+FTyRUgdMjRgkOmCbVcU76P5t0ccZr4OS+v/8aEjOw0vn//KLwIMQ7n5D9PL4zL6TcT3y4n1K3TWKJ3IkGeLLn9DXb1iHkoppBPPf0D2rYTcbqsedoTfHBO+8rlfLKy25Fnt3fM/kx2qr2he28yqLz3qrNjvu3MpXeI2GGhgSSUxShOGCUY7WV1OSrh0WUqrXTPuk4MGWubYTCYuaHRtyNy8mU6ncJRTtpWhFbkQO5FC+v0eITeTiWBbTbmmL9hFR7UO3RHQTQqm1/JDnSWKDjWpJ8utMhRdWJNRH26vz2E4GDZ3ou4o4OHIeVZR8u8GSKmtEgTV9p+fd9b+9eP7IzoCFZL9q7ynagkNJdWLbdWP5bTi8Ei+lhI6nG77XlcWpdkJ3Aiwn22/X8xuri7GgOMZo2Y3V+qR1uqM6mVdnvSPuq7P6+IIK/UlibbOuA63s5/eqbutynJYWjOlPCJe1tP61MOVU5nc4kKel4zKBwiS1Kj5WnFLqgtz60hhjGoRUuGjsOe2+uSlAFBzrlRrM4e0VnntdaUWjohV9hhzG2R7dnX4C70R01hNKqawEPREMWRbIAwy1p9KE4whc4elmLbSnXb5i8s9PwLTF55Eh7ZgFVduthUg48OKTpcwTtXyHSNKyN5mM8dMH5IbBlkev0ykNozN0vkMNAt0mSp4pPX+W2WFrpe8xaYrTHbskvIRtLOAgIxnZlpT5INTRx1EUJ7L95e34lJ86bKvLF3Qdwb06wPszWaMeC+uHQbYES8uhkHm1N8Ip10C
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List users (admin+)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/users"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List users (admin+)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"query","name":"role","schema":{"type":"string","enum":["owner","admin","manager","technician","viewer"],"title":"UserRole"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Users list","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"username":{"type":"string"},"email":{"type":"string","nullable":true},"role":{"type":"string","enum":["owner","admin","manager","technician","viewer"],"title":"UserRole"},"scopes":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string","enum":["application","gateway","team"]},"id":{"type":"string"},"permissions":{"type":"object","additionalProperties":{"type":"string","enum":["none","read","write","admin"]}}},"title":"ResourceScope"}},"active":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"lastLoginAt":{"type":"string","format":"date-time","nullable":true}},"title":"UserInfo"}}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

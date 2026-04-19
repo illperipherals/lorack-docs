@@ -1,0 +1,69 @@
+---
+id: search-device-profiles
+title: "Search device profiles"
+description: "Search device profiles"
+sidebar_label: "Search device profiles"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVVFv2zYQ/ivEPbUAIznrnvTmrd2QNQOCpEEHpEZxps4WG4rkSMqrJui/D0fZjhynw9CX5cUh9d13x7vvIwdIuI1QPcBb2mlF4ia4jTYUYSUhkuqCTj1UDwOsCQOFZZcaqB5WoxwAvX5P/XFnJcFjwJYShZhDtIUK/uwo9CDBYktQwY5s7QJIiKqhFqEaIPWev8QUtN3CyNQvRbauJvM9gYG22tl/jVxJCBS9s5Eif/9hseCfmqIK2icOr+B3TKrRdiv8oUcSlLOJbGIwem+0QgaXXyJHDOcZMQTk0nSiNs723foLqQQj/0n4cXH5Qnodo7bbUtsdGl0LFagmmzSa7ylkn1CCD85TSHo6OIXgwou9haST4a13DLnddwsOBb85L/jKxm6z0UqTTcJTaPkAeRD/Z7GjfFbmHWFQjagn/c9m21JqXA0VbCnnRhY6lOh1ubssJ/zFDB8p7A7S74KBCpqUfFWWxik0jYuperNYLOB5Adf8mfOTcb7lvrCSnxhiVZbMrRXFgr5i6w0VyrVnRDfB1Z3ihXgVyBtUJP7Sic/mjeupFve3169hnFn7jls9dXNu8GNLOf/BObyeQCD3//ziQosJKvjt44ezcpjKBf13Hq5oCGsKomMNi59ytEjukWwBozy5S57MkjfZLUw3ETzZ+o+L5c3VxQQ4TXwfKYjlzZV4pF68omJbiC5S+FwUxesiy0PbjcuJ9jK5drfLn9+Lu32XORgk8DQnxstiUbw0uBwVyWwueLxUizhj4KS1WPciNSRat9aGBHovNi7kegR2qZGfLLsBVYpSNDomF3oRe6uk2BiiJKJFHxvHn5dX8xXa+ploRSDvos4UNSYsPlnurXcxtZidtW/dNyV/cr7jHBJ9TaU3qDNdFuawt8MDD4lbdZmjTy2xksBtYdQwrDHSfTDjyNvTDc1GqXXEtaEaqg2aSBIeqZ8/Ezs0HdeQPfEN8OFl+C/Y42PwBF7xImhGT0/bQWpc3xS1VIp8mkWdXVvMcrwwfn3HbsBTNT+zTmY/CN32M+5hmBAf2B3jCIfSs1tgXI3j+A9MI6UM
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Search device profiles"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/device-profiles"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Search device profiles
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"query","name":"vendor","schema":{"type":"string"}},{"in":"query","name":"model","schema":{"type":"string"}},{"in":"query","name":"region","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Matching profiles","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,59 @@
+---
+id: export-all-contact-entries
+title: "Export all contact entries"
+description: "Export all contact entries"
+sidebar_label: "Export all contact entries"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVU2P2zYQ/SvEnBJAK3mbnnRzg03hZgsYmyxawDGKMTW2mKVIlqTcVQX992AkyyuvhQIBAvRkmZx58/XmsYWIhwD5Bt5bE1HGANsEAsnaq9hAvmlhR+jJL+tYQr7ZdkkL6NRHas4n2wQ8BWdNoAB5Cz8tFvxTUJBeuaisgfwML+jZWR9FhU48UUOF2DUiNo5yVUAC0ppIJrI/OqeVRPbPvgYGaSHIkirkL3aBHOzuK8kICThvHfmohhTkWMyMJRaFYlDU6wufkx16jw0koCJVs/6XkVQxsQnRK3OALhkTWM3fGqxo9sJbPX/hSmvmb6hCpeej2HhR2QRNyVj7eTwV1l5V6JvJ7c5aTWj6wjxhpGIZr50T2FtfYYQcCox0E1VF7FK74vtcugSiityJkTbQ8eFAne9C6nrHnxe314z8XYWgzCFT5ohaFUJ6KshEhTr8OCKS99bP9HlS4h2bPJwWCMaE310nvDKh3u+VVGSicOQrLsCa/znZLnmV5t2w4Ki1OG2BIBM9x0igoljaAnI4UB8fWUMgQ6ey4202rm02TBpYifyRfOiFqPYacihjdHmWaStRlzbE/N1isYDXSdzztSjoSNq6invDwvWCEPIsY2wlKaT0jJXTlEpbXQGtvS1qyX/EG09OoyTxj4qlKMhpy/r1+HD/FrqJan7idg8dnWrnua0cn0vrzXi7eiNITh8fRh7/9sfnq3QYynr1bz9gURIW5EXNPBa/9N4i2icyKe/dVKZf5K0/ZH1juAEARkWCP2+W69XNYHAZ+DGQF8v1ikVbvKH0kIo6kP8rTdO3aU8RZfa2D3Siyr19WL7/KD6duszOkABPc0C8TRfp3OB6r0B6f8PjpUKECQIHHZ6MkkRld0qTQOfE3vo+H4F1LJMvZmRSIkoVovWNCI2RidhroiiCQRdKy9fL1fQfmoJJoyQJ5+2e0T05G1QPUWDE9Esvg86GWGG/XafW/SftL2o8zyLSc8ycRtVD9uRsTyux4UFxu24heXnNRgnkN5qbw3Ztu8NAj153HR//XRNL92abwBG9wh3Pgp/tcda8SU/UMJekJMdLdkRdD9x4pR3M6vPG/nrHdMRLOr3ibo8+Ms00E+y2HSw+Mz27DpJTEj1dodt2XfcNU6/zYw==
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export all contact entries"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/contacts/export"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Export all contact entries
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Contacts export map keyed by type:id","content":{"application/json":{"schema":{"type":"object","properties":{"contacts":{"type":"object","additionalProperties":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"contactId":{"type":"string"},"name":{"type":"string"},"role":{"type":"string"},"phone":{"type":"string"},"email":{"type":"string"},"notes":{"type":"string"},"picture":{"type":"string"},"isPrimary":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Contact"}}},"exportedAt":{"type":"string","format":"date-time"}}}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

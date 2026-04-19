@@ -1,0 +1,70 @@
+---
+id: replace-all-contacts-for-a-resource
+title: "Replace all contacts for a resource"
+description: "Replace all contacts for a resource"
+sidebar_label: "Replace all contacts for a resource"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNV11v2zYU/SvEfWoAWbbTFt305gYd4DUDgjTBhrnGQIvXFhuKZEnKqWvovw+Xki0l1oJkGND5xSZ5eXl4P86h9xD4xkO2gAujA8+Dh2UCHvPKybCDbLGHFXKHblaFArLFsk72wK38iLvjzDIByx0vMaDzcYvUkIHloYAENC8RMnDoTeVyvNlZhAQcfq2kQwFZcBUm4PMCSw7ZHgIZZOCDk3oDCaCuSsLHrVUy50EaDQlseMB7voMEBG5lTi6tM2upEJY1YXwCwly8AEBN1yNj9OG9ETuyeLw3NzqgDrTUQzn+4o2muRPXZvUF8/AAxCI6ifFPoLKCBxSzQLmwzlh0QaInD93SQKjWxpU8QAZkMwqyRKiTznG3gzsXYycDln4I2MNDpRiIy9HxfHi1CfrAgjNqeMEWRg+vYMmlGj7FBPTD3mQeKjfsT/orJ0vudr3VlTEKuY4Xc/jSIL84L3UCQQaKxKHzoG4+VBbeGu2bi51PJvQl0OdO2lj+GVyjVTxH5tBXihL2r0vw2eUVE17p/orUATfo4ID7zTDU2Dtsy5UUERVD54z770A37gY6twvxBzK5bsMKB7TTU7S/Se+l3oyljnhZ7lCgDpIr/z8A/PoU8Fz7ar2WuUQdmEVX0gUiRf5IsHXyDwXLlWIHQmJr4xhnB1qGBEoMhRFE3FUEQvSdwZhbOd5Ox4d9431fTOpuOBc1kHi57UGIKqcggyIEm43HyuRcFcaH7PVkMoHHEC9pmQncojK2pMiRjnQefDYek2+Zo0/xGy+twjQ35YmjK2dElcdKf+Xae9/LUDCBVpkdCnZ7fXkGdU9oP1Eymnj35fYYdDofWpGKZBWNIGl//HIgmF9/vzmBQ66Mk9+b3iuQC3Ssoipn7+NuFswd6pQ6vK/snVrESZILctc46FT1j9Hsaj5qDB4efOvRsdnVnN3hjr3CdJOyyqP7K03TszQWENXidaetH5qgPiIiOJ+cvxlN3o3Of76Zvs3eTrPzn9LJu+mf0Ne2RSNTHen21KmbbDEfx40WdeNWgnqvj0Z5eh4aweltOehMN9WTl/aB0AnKU7d51qXrJQmYXpuYobYDL8317OIj+9SWJ0UdEqA2aFIxTSfpUMXHXR7VekR9gYL5ngfKlmCrHQsFstKspELGrY1tS4lkvApF8lkfkpCwQvpg3I75nc4TtlaIgXnNrS8MLc/m/RHXgjWPN9Y+3ZhDa7yMLgQPPP0c5dgaH0oeSavN3/PY5MFlj9Uc8FsYW8Vl9B3be98yDT0yJcVt2i+tBLJHj9es95JcJkCho837/Yp7vHWqrmn6a4VUAYtlAlvuJF9RphZ7ENLTbwHZmiuPJziPvA2vrtv34RmDZBj/oUU1td+Wq4pGkMAd7h4/uonNfsDZc9GUbMsbFIHG4KI5a9QG9eDgRKsId7Njludow5O2y56IXN0SGa7aR3tpRPwTwO+p7/l9g9XEq0fijXN7UFxvKr4h28YlERV/yIiP6DdeajAa+31jcUMMW9fH4ETGpbjU9d+vKZzy
+sidebar_class_name: "put api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Replace all contacts for a resource"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1/contacts/{resourceType}/{resourceId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Replace all contacts for a resource
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"resourceType","required":true,"schema":{"type":"string","enum":["application","gateway","device","profile"]}},{"in":"path","name":"resourceId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["contacts","updatedAt"],"properties":{"updatedAt":{"type":"string","format":"date-time"},"contacts":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"contactId":{"type":"string"},"name":{"type":"string"},"role":{"type":"string"},"phone":{"type":"string"},"email":{"type":"string"},"notes":{"type":"string"},"picture":{"type":"string"},"isPrimary":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Contact"}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Replace result","content":{"application/json":{"schema":{"type":"object","properties":{"updatedAt":{"type":"string"},"count":{"type":"integer"}}}}}},"400":{"description":"Request validation error","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

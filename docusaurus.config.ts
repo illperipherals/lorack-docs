@@ -31,6 +31,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
+          docItemComponent: '@theme/ApiItem',
           editUrl:
             'https://github.com/illperipherals/lorack-docs/tree/main/',
         },
@@ -39,6 +40,28 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  themes: ['docusaurus-theme-openapi-docs'],
+
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'classic',
+        config: {
+          lorackServices: {
+            specPath: '../server/openapi/lorack-services.yaml',
+            outputDir: 'docs/api/server',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
+        },
+      },
     ],
   ],
 

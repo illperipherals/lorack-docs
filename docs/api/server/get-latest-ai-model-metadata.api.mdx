@@ -1,0 +1,59 @@
+---
+id: get-latest-ai-model-metadata
+title: "Get latest AI model metadata"
+description: "Get latest AI model metadata"
+sidebar_label: "Get latest AI model metadata"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVMFu2zgQ/RViTi3ASE7bk27eRTfwNi2CtEELpEYxpsYWE4pkScqtKujfi6FU144XWGBPe5JEPb55nHmPAyTcRajuYbmCtYRIqgs69VDdD7AhDBSWXWqgul+PcgD0+g31h5W1hEDROxspQjXAi8WCHzVFFbRP2lmo4BoTxSRaV5MBCcrZRDYxDr03WiHjyofI4AGiaqhFfku9J6jAbR5IJRjHcZTwanF5XuCtjlHbXantHo2uhQpUk00aTfzv9ST44DyFpKejUQguHMFiCtrugEUlnQwvvWbI7dyPg+CX54JXNnbbrVaabBKeQssHcPZ/IPbVudh3bhqdwD1qgxtDmecUdEVJmGnOy9WMbylhjQlBQkupcTVUsKMsFtk/UKLX5f6yRF3mHbGcKIBtGPYUYnZhFwxU0KTkq7I0TqFpXEzVy8ViAU91XPNvUdOejPMtd5Jd+5shVmXJ3FpRLOg7tt5QoVx7RnQTXN0p/hDPAnmDisQ3nRpRkzeup1rc3V4/h/EoMu95OFP/j4NzGALX56NlGFQzCOT88pcLLSao4O+PH87kMJUL+ke2g2gIawqiY9eLP/Jukdwj2QJGeZLRQ/FpESRoppsIQILFLOXTxfJmdTEBTgvfRQpiebMSj9SLZ1TsCtFFCl+KonheZCNou3W50Gysa3e7/PONeD93mTeDBJ7mxHhZLIp/GlzeFclsL3i8VIt4xMBFa7HpRWpItG6jDQn0XmxdyHoEdqmRny3nB1WKUjQ6Jhd6EXurpNgaoiSiRR8bx7+Xq+MvtDWbRisSPrgtswfyLupMwSYuPlvurXcxtZizOLfuX5x/csrDNBJ9T6U3qDNptucwp+KeR8UNuwQJyG9TNkDCnI61BO4QQ4dhg5HughlHXv7aUeCbey1hj0HnrOaL+9fAOU6P1LOhlCLPSduj6SaDPLlu2NqH3F69Zk/iqaeeGDiz/7Kb7Y+4h2FCfGCPjiPIWUT2LIzrcRx/AqQbPeA=
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get latest AI model metadata"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/ai/models/latest"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get latest AI model metadata
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Latest model","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"404":{"description":"No model available"}}}
+>
+  
+</StatusCodes>
+
+
+      

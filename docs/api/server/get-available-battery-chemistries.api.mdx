@@ -1,0 +1,59 @@
+---
+id: get-available-battery-chemistries
+title: "Get available battery chemistries"
+description: "Get available battery chemistries"
+sidebar_label: "Get available battery chemistries"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVMFu2zgQ/RViTg1AS07bk27OtltkmwJB2qAFUmNBU2OLDUWy5MhbraB/L4ZSUtvJodjL+mJpNPPmceY9DkBql6C6gze4NxrFdfRbYzHBWkJC3UVDPVR3A2xQRYyrjhqo7tajHEAF8x77x8haQsQUvEuYoBrg5XLJfzUmHU0g4x1UcKGIMPZCN9iaRLEX1iQCCdo7QkdcoUKwRiuuKL8lLhsgcYHiJ+oDQgUqRtWDBEPYpoO433xDTTDyT8Lr5flTDh9MSsbtSuP2yppa6Ig1OjLKpv9AZG4oIUQfMJKZTo8x+niQligatwMmRYYsh95yys08Mngg/Oop4UuXuu3WaIOORMDY8gG8+5/JjvKE5jskofbKWLWxKDYnm+ZWElqkxtdQwQ4zDcXigVIFU+7PyzprcBFmDZYzxuIYI2HcY0xZlV20UEFDFKqytF4r2/hE1avlcgmn/K74s6hxj9aHlsfGKv6FkKqyZGyjMRX4Q7XBYqF9+wToOvq60/wiXkQMVmkU/xhqRI3B+h5rcXtzdQbjgYU+8hGmYR8a6XHi3J+PltOgmpNAzg9/+tgqggr++vzpCR2G8tH8m3cvGlQ1RtGxxMVFrhbk79EVMMojz/7yUg6ymRhuAgAJTmUqXxar68vFlHDc+DZhFKvrS3GPvXiBxa4QXcL4d1EUZ0VWj3FbnxvNKrryN6s/3ouP85S5GCTwNifE82JZPLe4XJXQbhe8XqxFOkDgprXY9IIaFK3fGItChSC2PmY+QnXUyK+OzaI0JSkak8jHXqTeaSm2FpFEciqkxvPn1eXhm3K1mIQpZmGKiMEnkyFqRar46ni2wSdqVTbePLrfccTRUR9XQviDymCVychZo8PsljveF0/tPFcfOYYF84xn1hJ4blw7DBuV8DbaceTw9w4j3+9rCXsVDfOcrvcHGbDJ7rFnmWmNgU27V7abZHNy47DgHw3+7i0rVR0r7UTWGf1BhK4/wB6GKeMTK3ccQc4kspJhXI/j+BNBFlXW
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get available battery chemistries"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/device-profiles/battery-chemistries"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get available battery chemistries
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Battery chemistry list","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

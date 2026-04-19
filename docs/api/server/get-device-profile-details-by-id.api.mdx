@@ -1,0 +1,69 @@
+---
+id: get-device-profile-details-by-id
+title: "Get device profile details by id"
+description: "Get device profile details by id"
+sidebar_label: "Get device profile details by id"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVVFv2zYQ/ivEPSUAIzlrn/TmrV2RNQOCtEEHuEZBkyeLDUWy5MmrJ+i/Dycprh1nwLCnPdkk7777dPd9ZA+kthmqFbzBndUo7lKorcMMawkZdZcs7aFa9bBBlTAtO2qgWq0H2YOK9j3uDztrCVEl1SJhymOK9VBBVNSABK9ahAqsAQkJv3U2oYGKUocSsm6wVVD1QPvIUZmS9VsYGDNhjsFnzHz+02LBPwazTjaSDVxhpiwMkrIOJOjgCT1xpIrRWa04svyaObw/Lxc2X1ETDMMwSHi9uD4v8bvN2fptaf1OOWuETmjQk1Uu//d6EmIKERPZ6eMwpZBe6oIEsuR46y2H3M8dORB+dU74xueurq226ElETC1/QPD/A7Kv/3mAPpCoQ+fNCHMa8w5JmEmi8WTeWWz2YpRVi9QEAxVsceTLwqugVNGWu+tySr6ak3PZWzMAazztnvTaJQcVNESxKksXtHJNyFS9WiwW8JzPLR8zI3QhttxQtsQPhFyVJWNbjbnA76qNDgsd2jOguxRMp3khLhJGpzSKPy01wmB0YY9GPNzfXsJw5McPPKNpDMeuPMyC68NsK15PQSDnP7+G1CqCCn779PGMDkOFZP8aVSEaVAaT6Fj84ucxW1B4RF/AIE8ugEPxaRPk5P4J4If//7ha3t1cTQGnhR8yJrG8uxGPuBcXWGwL0WVMX4qiuCxGQVhfh7HQrK/bcL/85b34MHeZk0ECT3NCvC4WxUuDG7MyuvqKx4tG5CMELmpYUtSgaMOGhaZiFHVIIx+hOmrkZ882UpqyFI3NFNJe5L3XUtQOkUT2KuYm8PHy5nilvHku44QxZDtCGEWq+Oy5tzFkatVoybl1/8IBJ196mAjhdyqjU3YEHiXaz+5Y8bi4addj9olDQEJlDb8D3CaO7fuNyviQ3DDw9rcOE78Nawk7laza8FRWPRib+b+BqlYu4xmtww0EF/fzS3ApQL5M90lVnhWzU67jFUh4xP30nAzrQT7JjKtPB0utMdJRytldx4Y63Bjv3rIT1KmSn9lmRH+RTt9PER/ZGcNwYDc6hQkOw9/ruYq6
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get device profile details by id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/device-profiles/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get device profile details by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Profile detail","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"404":{"description":"Profile not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

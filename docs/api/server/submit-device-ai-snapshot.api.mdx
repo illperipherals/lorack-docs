@@ -1,0 +1,68 @@
+---
+id: submit-device-ai-snapshot
+title: "Submit device AI snapshot"
+description: "Submit device AI snapshot"
+sidebar_label: "Submit device AI snapshot"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVk2P2zYQ/SvEnBKAlj+yQVLdnO2m2GaDLvYDKeoYxVgaW8xKJENS3qiC/nswlNf22m4OubQ3iRo+zryZ96gWAq48pDOYXsJcgqesdio0kM5aWBA6ctM6FJDO5p1sAa36QM12ZS7B0deafHhn8gbSNr4qRzmkwdUkITM6kA78Ca0tVYZBGT384o3mNZ8VVCE/hcYSpGAWXygLIPeAZpDTWmV0USuQUBCWoeBUrTOWXFDkef8uZgfmg1N6Bd1214lznqOYNTksy71AXVcLctB1nQTlfd3HbT6ic9iABBWo8sfovGeBIZBrfnWo9IkICZbcbxjoEZuPFJzKTuFIqMh7XNG5qXWYnBUnEpSwIk0OA+XTcEyChKVxFQZIIcdAg6Aq4qpiYY68Ndr3tU1Go55QnzlluV2QwvuSKIjYzW9BoM5FZXIqRUUBcwwIP93qPoOzU4fe9LMl1liqPKIJcs64nz/ssN893PHEdBKCCiUvXXDIzYagbbbj42w/Ku+VXg2VjvmKzFFOOigs/f8g4VfHCV9qXy+XKlOkg7DkKi7A6P842U4epHlbLyoVRC9wMb0UXqP1heHzKgqFySEFa3w8H1nlMESrhuvxENXwKZh74MmtyfnobbUrIYUiBJsOh6XJsCyMD+mr0WgEhxlc8WdOgEpjKyaGvXCH4NPhkLFVRj6hb1jZkpLMVEdA187kdRYH+YUjW2JG4lGFQuRkS9NQLu5vrl5Ct2fEt8x1T+e+HW855fO5tBgG6SYI5Obh/ZPof/90d5QOQxmn/umlVRDm5ETNQyzexd0imAfSCZvLvvPv/C8usgEyXA8AEjTGVP4cTK8vB33A84PvPTkxvb4UD9SIF5SsElF7cn8nSfIyifPBo3azu1ouelIPjH7nbTt/3zr4aM+wZy1TemDF/+K9p8x2dGCuMBlNzgajN4PJL3fj1+nrcTp5m4zejP9ippRemsjRZsSvzM30/IO43QwI1w0SeBB7MsbJKDk1c3GXp3I54MmkXPg9BOYrF4tGhIJEZRaqJIHWiqVxkUqBdSjkZ81Kxix4KQrlg3GN8I3OpFhGP9+KQ+7rysto8BvBWWeWjO7IGq8iBBt+8lnH28v4UGF0hU3XfyTXZyVup4ivlKEtuSud7GXVbpQ84xFjtsYgAflpp+e5BCaGg9p2gZ7uXdl1vPy1Jsd/MHMJa3QKF9wH/oF5GlE2gAdqIIXz3ukGd5wKh5d1P9gHrseC73dMs4xs+GHsfM+Yrv+4ZeEtNv9HfGtCCg4f+R8HHyEFkGAiJVHkca2FEvWqxhXH9pgsCnyuvgOpx6qehKmbvQzbto+4YzV3HchNKVHd0M27rvsO5rF1mA==
+sidebar_class_name: "post api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Submit device AI snapshot"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1/ai/snapshots"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Submit device AI snapshot
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["deviceEui","health"],"properties":{"deviceEui":{"type":"string"},"health":{"type":"object","properties":{"overall":{"type":"number"}}},"issues":{"type":"array","items":{"type":"object"}},"batteryDrain":{"type":"object"},"perGatewayMetrics":{"type":"object"},"messageCount24h":{"type":"number"},"generatedAt":{"type":"string","format":"date-time"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Fleet context and model metadata","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Request validation error","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

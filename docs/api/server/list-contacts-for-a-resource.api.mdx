@@ -1,0 +1,69 @@
+---
+id: list-contacts-for-a-resource
+title: "List contacts for a resource"
+description: "List contacts for a resource"
+sidebar_label: "List contacts for a resource"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVlFv2zYQ/ivEPSUAIznrnvTmFd3gNQMCN8EGpMZAi2eLDUUyJOVWM/Tfi6MsW4m1dh0K1C+WxLvvvjvefeQeotgGKB7gtTVRlDHAikPAsvEqtlA87GGNwqOfN7GC4mHV8T0Ip95ie/yy4uCEFzVG9CG5KAMFOBEr4GBEjVCAx2AbX+Jd6xA4eHxqlEcJRfQNcghlhbWAYg+RDAoI0SuzBQ5ompr4Cee0KkVU1gCHrYj4UbTAQeJOlQTpvN0ojbDqiOMXKCzkNxA4gT016NsTWlAmhf135hvraxGhACkiXkVVI3RULI/BWRMwkNNPsxn9SQylVy5lV8DywJSVw6ZwoEc0kYxHpcg/BPLYn9Ow6w9Yxr4uDn1Ufbwj4slSeJ8qqSLW4esISk5UiQ/Ai+nVvmgTC97q6QVXWTO9grVQejqKjRim0VQZGz+Np8KtV7Xw7Wh1ba1GYVJiHkVEOY//dY85NE5+m0vHIapIlRjmMH37Ak6Xfhx+nu6fpwZDZDuhlUx9wtB7679fG/VwU9NyTOQNmSwPvQ4D2+tztn+oEJTZ5sokvqz0KNFEJfR37Pv/TfjVOeGFCc1mo0qFJjKHvqYEkiz9SLIdf0HzRoV4VBC2sZ4JNmggcKgxVlZCAVtMDEgrC8iFU/nuOh/88v1YubvT60J2pH7od4PqN15DAVWMrshzbUuhKxti8Wo2m8EZN1pmEneoraupZKSzJ4RQ5DlhqxJDhp9E7TRmpa3PgG69lU2ZWvzCo9OiRPZRxYpJdNq2KNn98uYSutGp9o52oS/0+Gw7VpviD8KetCAZAT88/DrM7+9/3p3RISjr1T/90FUoJHrWUHuzX5I3i/YRTUYqMT5GT2KcPpIaE1wPcDp0/rqa3y6ueoPnge8Deja/XbBHbNkFZtuMNQH931mWXWapc5TZ2BTo0EE3djl//Za9O1SZnIED7WaPeJ3NsqmNS14B9eaKthclCyMECirZumWxQlbbtdLIhHOp+4gPE02s+HsztBdnlQrR+paF1pScbTRiZMEIFypLy/PF+E0YyfoDnx2Oe+bR2aAShBRRZO+TaDsbYi3S0B1K95VpeJblcTcifoq500Il0NSe+8Ok0I1EUcGugcPonC5e3HSK0bVjxYFqRs77/VoEvPe66+hzf7mgKZIqiLWmi8lG6IAcHrEdXTd2QjfELHX0TnhFxtOOL1I6ahNcLA+Xn0sGfDrVoRtNO445kHmWIg3uD4i9kNCtOj6MCFWgN5iXJbo4cj1TYirdUf1+e0NTLJ5P4YuRT+iTtPb73uKOprrrjizTlBPBrvsMIa/q5g==
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List contacts for a resource"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/contacts/{resourceType}/{resourceId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List contacts for a resource
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"resourceType","required":true,"schema":{"type":"string","enum":["application","gateway","device","profile"]}},{"in":"path","name":"resourceId","required":true,"schema":{"type":"string"}},{"in":"query","name":"since","schema":{"type":"string","format":"date-time"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Resource contacts","content":{"application/json":{"schema":{"type":"object","properties":{"contacts":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"contactId":{"type":"string"},"name":{"type":"string"},"role":{"type":"string"},"phone":{"type":"string"},"email":{"type":"string"},"notes":{"type":"string"},"picture":{"type":"string"},"isPrimary":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Contact"}},"updatedAt":{"type":"string"}}}}}},"400":{"description":"Request validation error","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

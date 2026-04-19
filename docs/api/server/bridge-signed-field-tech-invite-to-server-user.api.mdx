@@ -1,0 +1,68 @@
+---
+id: bridge-signed-field-tech-invite-to-server-user
+title: "Bridge signed field-tech invite to server user"
+description: "Bridge signed field-tech invite to server user"
+sidebar_label: "Bridge signed field-tech invite to server user"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVk2P2zYQ/SvEnBJA/timvejmDVJgmy1ieLNIgY1RjMWxxCxFMiRlRzX834shvbG9VtPuqbrYIoePbz7ejHYQsQ5QPsCsiw0sC/D0taMQr63sodylV+VJQhl9RwVU1kQykbfQOa0qjMqayZdgDa+FqqEW+V/sHUEJdvWFqgjFCdADKLNRkebYa4sSisP7naoNxs4T03DeOvJRUWCw8wNH9BC9MjXsLyEubdLDPIKzJmTcn6ZT/pEUKq8cewIlvPWEkaToAnmBRorZ/EZE+0gGXuA/av1hDeXDZSSeuTbsD19usB1ypABqUenLnQJMpzWuNOVssbdWD0AUQKZrORN2a8hDAShbxe61aLBOK5GqxqhKIS9vFG3Jc16iiowI94H8gsH3BYTKuuzM4Rr0HnvOa6Q2DBXDeQjy7j+TPAk0FFBjpG2Cj4QtLDn5wzF05FsVgrJmkARKqRgT9XyAziUNYw2lQk41u/Uq0vfILVNtPQVnQcF2vqI7DgzwDlZRbU6dXFmrCQ3TrHK9zeLQ5WvrW4xQgsRIo6jaFPHOyZce0Rjira2V+c+HLsppf57+G7O2sC/+NbtJOUN6XGZF/jwkwkVuQ2KDWsmUekHeW/8SCf6YV4Yb4HX08h2bLA4NA57YXl2y/Z3LzNQTZRJfUXmSZKJCHf53wr9M31wSvkntUqy8kjUJqQKnWSasc8PrbBFUbUiKtSItR9waRG64IloRyG/Ip3bJHYRiYyWU4GxIPmBsoIQJOjXZXE3YKkzyvaOMAQVkiJDaZec1lNDE6MrJRNsKdWNDLN9Mp1N4zu6Wt4WkDWnrWo4x1+MRIZSTCWOrisKYvmHrNI0r214Azb2VXZXK7JUnp7EisVWxEZKctj1Jcb+4fQ37JXOtOq9if8dpy5lZEXryaYIe08P3s2vJjBWfjKA4/Pn1SXC/ffp4QYehrFd/5cJvCGUKsDK1uE6n8zwas7DRqffUP7s8L6bRylQSAAs6TRT4YzSb34yywfnFrOs07x6pF69oXI9TXv8cj8evx6k8uGoXx2+EdzmoA0P62FsuZvPZ3F7bxPtQwbd2MXv7XtwdksZceP6QD5ng1Xg6HqqDdCqQXo+4WkiKcILAPkix6kVsSLR2pTQJdE6srT9M+S42xWfDQsUqhkI0KkTrexF6UxVirYmiCAZdaCxvz25O3/gbQRLfJpy3a0b35GxQCUJixPHn1OlZEi0m0R8y8WJ5nfn9Pd2RvsWJ06jSNan+dwfl8fhUHMIryF8V3JHO9bcsgIPGtrvdCgPde73f8/LXjnwP5cOygA16lWfBA4/cQ0mxYB+p56+m3ORGH5kRm+suF+KzhscCzSdmVUUu/tB2edJP5h/uWCirw4dpayWf8bjlmYxbKAEKsCkySZRpbQcaTd1hzbYZk5+/ATF5ytI=
+sidebar_class_name: "post api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bridge signed field-tech invite to server user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1/users/bridge-invite"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Bridge signed field-tech invite to server user
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["invitePayload","inviteSignature"],"properties":{"invitePayload":{"type":"string"},"inviteSignature":{"type":"string"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Created user and API token","content":{"application/json":{"schema":{"allOf":[{"type":"object","properties":{"id":{"type":"string"},"username":{"type":"string"},"email":{"type":"string","nullable":true},"role":{"type":"string","enum":["owner","admin","manager","technician","viewer"],"title":"UserRole"},"scopes":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string","enum":["application","gateway","team"]},"id":{"type":"string"},"permissions":{"type":"object","additionalProperties":{"type":"string","enum":["none","read","write","admin"]}}},"title":"ResourceScope"}},"active":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"lastLoginAt":{"type":"string","format":"date-time","nullable":true}},"title":"UserInfo"},{"type":"object","properties":{"token":{"type":"string"}}}]}}}},"400":{"description":"Request validation error","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"503":{"description":"Invite bridge disabled"}}}
+>
+  
+</StatusCodes>
+
+
+      

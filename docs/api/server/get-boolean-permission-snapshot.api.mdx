@@ -1,0 +1,69 @@
+---
+id: get-boolean-permission-snapshot
+title: "Get boolean permission snapshot"
+description: "Get boolean permission snapshot"
+sidebar_label: "Get boolean permission snapshot"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVU2P2zYQ/SvEnBKAK3nTnnRziyTYZAMsNlmkwMYoxtTYYpYiGZJyowr678VQ/pDjLXKIL5bImTfDN+9RAyTcRqge4SFSiLCSEEl1QaceqscB1oSBwrJLDVSPq1EOgF6/p/64spLgMWBLidM5RVuo4FtHoQcJFluCCgJF1wVFICGqhlqEaoDUe96LKWi7hZGhAkXvbKTI+68WC/6rKaqgfdKOge8otDpG7axYO2cIbQQJytlENnE4em+0Qg4vv0bOGS5ruvVXUgm44LdOB6qZAYX2nrBmOLSfg040PS7rVltmxgfnKSQ9tXcIP6HuG4JxhvB/uxPoM7v5J+H3xfXl4T/wye221HaHRtdCBarJJo3ml0g4PxeF4MJz85GQdDK89JpD7vezgn3H562+pXQYkPCnmUWLPjaOq7aUGldDBVvKTSArCkr0utxdlx3LsWypPCXzGSOF3UFoXTBQQZOSr8rSOIWmcTFVvy0WC/ixnVveFjXtyDjfMkus5RNCrMqSsbWiWNB3bL2hQrn2AuguuLpT/CJeBPIGFYl/dGpETd64nmrxcH/7EsaZkT4y8RO3czsdCeb6B2NkKeQgkPuHNy60mKCCd58/XbTDUC7of/OoRUNYUxAdi0T8kbNFck9kC1bd3LnH4tMiyMm2E8DJt39dLe9urqaA88J8XYjl3Y14ol68oGJbCB7Z30VRvCyyWLTduFxoL5pbd7/88734uGeZk0ECT3NCvC4WxXODy1mRzOaKx0u1iDMELlqLdS9SQ6J1a21IoPdi40LuR2CXGvnFsjdQpShFo2NyoRext0qKjSFKR1VGKZY38ze0NYtGKxI+uA2jB/Iu6gxRY8LiS3a0dzG1mH22p+7nBjg76HEgib6n0hvUGTcrdNib45GnxZxdg4RskGwjNs/MJCsJTBSHD8MaIz0EM468PF3KbJ1aR1wbvvY2aCJJeKL+/Jreoem4nazkHQbN8dM34KASBprylkqRT7Osi/uHUY6Gf/uahYznQvxB9Rn9oFHbz7CHYYr4xMIeRzg0n4UO42ocx/8AqLlaOg==
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get boolean permission snapshot"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/users/me/permissions"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get boolean permission snapshot
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"query","name":"resource","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Permission booleans","content":{"application/json":{"schema":{"type":"object","required":["canRead","canWrite","canAdmin"],"properties":{"canRead":{"type":"boolean"},"canWrite":{"type":"boolean"},"canAdmin":{"type":"boolean"}}}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

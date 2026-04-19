@@ -1,0 +1,69 @@
+---
+id: get-popular-device-profiles
+title: "Get popular device profiles"
+description: "Get popular device profiles"
+sidebar_label: "Get popular device profiles"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVcGO2zYQ/RViTgmglbxNT7q5TRpsswWMTRYpsDGCMTW2mKVIdki5UQX9ezGSvCuvix56qS82yZk3jzPv0T0kPEQoH+AtHY0mtWG/N5YibDOIpFs2qYPyoYcdIROv21RD+bAdsh4wmA/UPe1sMwjI2FAijmOKcVDCHy1xBxk4bAhKsKYxCTKIuqYGoewhdUEOjEt0IIZBgJhi8C5SlIAfViv5qihqNiEZL7AbH1qLrMLEV1kTBVZ7l8gliccQrNEo8cW3KEn9ZVVkRmFnEjVxse9330gnGOSTwY+r60sGv5kYjTsUxh3RmkpppopcMmjjfyAyF8wgsA/EyUx3J2bPi7CY2LgDCKlkkpWtdxJyNzcMToTfXBK+cbHd74025JIKxI1cwLv/meyQvaD5npIK83SrSZThJMoMGkq1r6CEA40EUNQHBQZTHK+LKf7qFF/MOKI34uNJly1bKKFOKZRFYb1GW/uYyjer1QpesrmVY+FB1odGmiTSf0aIZVEIttEUc/qOTbCUa99cAG3YV62WhXrFFCxqUn+aVKuKgvUdVer+7vY1DAvffZS+T61duu+pv1L/ZCVZT0GQzT9+8dxgghJ+/fzpgo5AeTZ/jZNWNWFFrFoRtPppzFbJP5LLYcjOjP7snHFTrCNwE8CzzX+/Wm9urqaA88L3kVitNzfqkTr1ivJDrtpI/DXP89f5qBXj9n4sNGvm1t+tf/6gPs5dlmTIQKY5IV7nq/yfBjdmRbL7KxkvVSouEKRopXadSjWpxu/kDcEQ1N7zyEdhm+rsixNroE4xU7WJyXOnYud0pvaWKKnoMMTay/H6ZrlCV70Qr2IKPpoRosKE+RcnvQ0+pgZHm82t+3f9n13yaRiJvqciWDQj5qjOfvbGg0xK+nU9Zp/5Qww0O2SbgXRJ4vt+h5Hu2Q6DbE8PuPimMhF3lioo92gjZfBI3eJJP6Jthcyo4SOykeDpz+KkD0GZktZaU1hmXTw8gvLk9vfvRMJ4LsEXeh/RT+p03QK776eITyLpYYAT81HiMGyHYfgb4f5tTQ==
+sidebar_class_name: "get api-method"
+info_path: api/server/lorack-services-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get popular device profiles"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/device-profiles/popular"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get popular device profiles
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"query","name":"limit","schema":{"type":"integer"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"Popular profile list","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Missing/invalid credentials","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Insufficient permission","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
