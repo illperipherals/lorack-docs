@@ -219,7 +219,13 @@ This is the fastest way to look up or onboard devices in the field.
 
 ### Field Tech Invite QR Codes
 
-If you scan a Field Tech invite QR code in the device onboarding scanner, you will get a "QR Code Not Recognized" error. This is expected because invite payloads are signed profile-access payloads, not LoRaWAN device labels.
+If you scan a Field Tech invite QR code in the device onboarding scanner, LoRACK! now detects that it is an invite and shows a guidance modal.
+
+The modal explains this is the wrong scanner and gives you these actions:
+
+- **Open Invite Import** -- opens Profiles and pre-fills the invite import flow
+- **Keep Device Scanner** -- stays in device scanning mode
+- **Cancel** -- closes scanning
 
 Use this flow instead:
 
