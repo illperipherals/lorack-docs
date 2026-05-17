@@ -452,7 +452,7 @@ Choose from four options:
 
 ### Commands
 
-- **Command Library** — manage your saved downlink command templates (see [Part 9](#part-9-command-library))
+- **Command Library** — manage your saved downlink command templates (see [Part 10](#part-10-command-library))
 
 ### Backups
 
@@ -460,7 +460,7 @@ Choose from four options:
 
 ### Developer Tools
 
-- **Streaming Debug** — test gRPC-Web streaming with four modes: Raw Fetch, XHR Text, Frames, and Events (see [Troubleshooting](/getting-started/troubleshooting#streaming-debug))
+- **Streaming Debug** — test gRPC-Web streaming with four modes: Raw Fetch, XHR Text, Frames, and Events
 
 ### Profile Management (Profiles screen)
 
@@ -468,7 +468,7 @@ Manage server profiles from the Home screen using the profile dropdown or **Go t
 
 - **Add/edit/delete profiles** to manage your ChirpStack server connections
 - **Import/Export profiles** to onboard teammates quickly — export a profile and share it
-- **Field Technician Access** — create read-only invites for field techs with optional app restrictions and onboarding credits (see [Part 13](#part-13-field-technician-access))
+- **Field Technician Access** — create read-only invites for field techs with optional app restrictions and onboarding credits (see [Part 14](#part-14-field-technician-access))
 
 ---
 
@@ -476,7 +476,7 @@ Manage server profiles from the Home screen using the profile dropdown or **Go t
 
 Field Technician Access lets admins create limited, read-only invites for field techs who need to view and occasionally onboard devices — without giving them full admin control.
 
-For detailed invite format and security information, see [Field Tech Access](/field-tech/overview).
+Invite format and signature details are summarized in this section.
 
 ### How It Works
 
@@ -588,4 +588,3 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 | Import a field tech invite | Profiles > QR scanner icon |
 | Adjust a field tech's credits or app access | Profiles > Edit Access on the profile card |
 | Compare underperforming devices | Devices > Compare mode > Compare |
-

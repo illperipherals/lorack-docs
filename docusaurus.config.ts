@@ -31,7 +31,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
-          docItemComponent: '@theme/ApiItem',
+          include: ['index.md', 'user-guide/index.md'],
           editUrl:
             'https://github.com/illperipherals/lorack-docs/tree/main/',
         },
@@ -40,28 +40,6 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
-    ],
-  ],
-
-  themes: ['docusaurus-theme-openapi-docs'],
-
-  plugins: [
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: 'openapi',
-        docsPluginId: 'classic',
-        config: {
-          lorackServices: {
-            specPath: '../server/openapi/lorack-services.yaml',
-            outputDir: 'docs/api/server',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-              categoryLinkSource: 'tag',
-            },
-          },
-        },
-      },
     ],
   ],
 
@@ -92,10 +70,6 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {
-              label: 'Quick Start',
-              to: '/getting-started/quickstart',
-            },
             {
               label: 'User Guide',
               to: '/user-guide',

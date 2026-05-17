@@ -433,7 +433,7 @@ If issues persist:
 1. **Check documentation:**
    - [Home](/) — Features and user guide
    - [Quick Start](/getting-started/quickstart) — Setup and connection guide
-   - [Build Mobile](/building/build-mobile) — Build instructions
+   - [Technical Architecture](/technical/architecture) — Implementation and data-flow overview
 
 2. **Gather information before reporting:**
    - App version (shown in About dialog on Home screen)

@@ -7,34 +7,13 @@ description: Mobile LoRaWAN network management via ChirpStack with optional MoD 
 
 # LoRACK! Documentation
 
-LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. It connects directly to your [ChirpStack](https://www.chirpstack.io/) v4 server via gRPC-Web — no proxy required.
+LoRACK! is a React Native/Expo app for LoRaWAN operations in the field and at the desk. It connects directly to [ChirpStack](https://www.chirpstack.io/) v4 via gRPC-Web and can optionally connect to MoD AI (`modencode`) services for diagnostics.
 
-## Get Started
+This public documentation site currently exposes only the user guide.
 
-- **[Quick Start](/getting-started/quickstart)** — Connect to ChirpStack in 5 minutes
-- **[User Guide](/user-guide)** — Complete walkthrough of every feature
-- **[Troubleshooting](/getting-started/troubleshooting)** — Common issues and solutions
+## User Guide
 
-## Key Features
-
-| Feature | Description |
-|---------|------------|
-| **Device Management** | View, filter, sort, compare, and onboard LoRaWAN devices |
-| **Health Scoring** | Four-pillar device health analysis (Battery, Connectivity, Signal, Data Quality) |
-| **Alerts** | Configurable monitoring rules with Critical/Warning/Info severity |
-| **AI Troubleshooter** | Natural language diagnostics powered by MoD AI |
-| **QR Scanning** | Rapid device lookup and onboarding via TR005 QR codes |
-| **Site Visits** | Structured field inspection workflows with checklists |
-| **Codec Helper** | Test and debug payload decoder scripts with live editing and comparison |
-| **Command Library** | Reusable downlink command templates |
-| **Contact Backups** | Export, import, and manage contact backups with optional photo inclusion |
-| **Field Tech Access** | Read-only invites with app restrictions and onboarding credits |
-
-## Documentation Sections
-
-- **[Getting Started](/getting-started/quickstart)** — Setup and connection
-- **[User Guide](/user-guide)** — Feature-by-feature walkthrough
-- **[Field Tech Access](/field-tech/overview)** — Invite management for field technicians
+- **[Open User Guide](/user-guide)** — Complete walkthrough of app features and workflows
 
 ## Supported Platforms
 
