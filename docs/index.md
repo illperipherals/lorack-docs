@@ -19,4 +19,3 @@ This public documentation site currently exposes only the user guide.
 
 - iOS 17.0+
 - Android 7.0+ (API 24)
-- Web (modern browsers)

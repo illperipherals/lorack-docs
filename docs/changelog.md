@@ -155,4 +155,3 @@ LoRACK! v1.0 — a mobile app for LoRaWAN network management via ChirpStack with
 
 - iOS 17.0+
 - Android 7.0+ (API 24)
-- Web (modern browsers)
