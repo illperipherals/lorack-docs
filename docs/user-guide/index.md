@@ -6,8 +6,6 @@ description: Complete guide to using LoRACK! for LoRaWAN management
 
 # LoRACK! User Guide
 
-![LoRACK home screen](/img/image.png)
-
 Welcome to LoRACK! LoRaWAN Manager! LoRACK! is a mobile app for managing your LoRaWAN network from anywhere. This guide walks you through everything you need to know to get started and make the most of the app.
 
 ---
@@ -18,7 +16,7 @@ LoRACK! connects directly to your [ChirpStack](https://www.chirpstack.io/) serve
 
 **Key things to know before you start:**
 
-- LoRACK! connects to ChirpStack via gRPC-Web -- no proxy server is needed
+- LoRACK! connects to ChirpStack via gRPC-Web — no proxy server is needed
 - The app works on iOS and Android
 - The app caches data locally for quick access; most actions require connectivity for live updates
 - You need a running ChirpStack v4 server and an API token to get started
@@ -31,9 +29,9 @@ LoRACK! connects directly to your [ChirpStack](https://www.chirpstack.io/) serve
 
 Before opening the app, have the following ready:
 
-1. **Server address** -- the hostname and port of your ChirpStack server (e.g., `chirpstack.example.com:8080`)
-2. **API token** -- generated in the ChirpStack web UI under **API Keys**
-3. **TLS setting** -- whether your server uses HTTP or HTTPS
+1. **Server address** — the hostname and port of your ChirpStack server (e.g., `chirpstack.example.com:8080`)
+2. **API token** — generated in the ChirpStack web UI under **API Keys**
+3. **TLS setting** — whether your server uses HTTP or HTTPS
 
 > **Quick rule:** If the port is `8080`, TLS is off. If the port is `443`, TLS is on. Always include the port number.
 
@@ -41,24 +39,24 @@ Before opening the app, have the following ready:
 
 A "profile" in LoRACK! represents one ChirpStack server. You can create multiple profiles and switch between them.
 
-1. Open the app -- you'll see the Home screen
+1. Open the app — you'll see the Home screen
 
-      ![Home screen with profile switcher](/img/image-4.png)
+      ![alt text](/img/image-4.png)
 
 2. Tap the **profile dropdown** at the top of the screen or just click the **Go to Profiles** button.
 
-      ![Profiles navigation from home](/img/image-5.png)
+      ![alt text](/img/image-5.png)
 
 3. Choose **Create New Profile**
 
-      ![Create new profile screen](/img/image-6.png)
+      ![alt text](/img/image-6.png)
 
 4. Fill in:
 
-- **Profile Name** -- a friendly label like "Production Server" or "Lab ChirpStack"
-- **Server Address** -- e.g., `chirpstack.example.com:8080`
-- **Use TLS** -- toggle on for HTTPS, off for HTTP
-- **API Token** -- paste your full token
+- **Profile Name** — a friendly label like "Production Server" or "Lab ChirpStack"
+- **Server Address** — e.g., `chirpstack.example.com:8080`
+- **Use TLS** — toggle on for HTTPS, off for HTTP
+- **API Token** — paste your full token
 
 5. Enter a Tenant ID (you may be able to tap **Discover Tenants** to automatically find your available tenants if you have this access)
 
@@ -68,7 +66,7 @@ A "profile" in LoRACK! represents one ChirpStack server. You can create multiple
 
 Navigate to **Applications** or **Gateways** from the Home screen. If your data appears, everything is working.
 
-![Connected profile status indicator](/img/image-7.png)
+![alt text](/img/image-7.png)
 
 Look at the **connection indicator** next to your profile name:
 
@@ -121,8 +119,8 @@ When you open an application, you'll see its device list. This is one of the mos
 
 **Switching views:**
 
-- **List view** -- device cards with health scores, battery indicators, and last-seen times
-- **Map view** -- see devices and gateways plotted geographically (requires location data)
+- **List view** — device cards with health scores, battery indicators, and last-seen times
+- **Map view** — see devices and gateways plotted geographically (requires location data)
 
 **Bulk actions (compare & move):**
 
@@ -135,32 +133,32 @@ Above the device list, an aggregate health bar shows average battery, connectivi
 
 ### Device Detail
 
-Tap any device to open its detail screen. Tabs are ordered: Health -> Info -> Sensors -> Data -> Commands.
+Tap any device to open its detail screen. Tabs are ordered: Health → Info → Sensors → Data → Commands.
 
-**Info tab** -- Device identity (DevEUI, JoinEUI), name, description, device profile, activation type (OTAA/ABP), and last-seen timestamp. Tap the pencil icon to edit properties.
+**Info tab** — Device identity (DevEUI, JoinEUI), name, description, device profile, activation type (OTAA/ABP), and last-seen timestamp. Tap the pencil icon to edit properties.
 You can also enable or disable the device from the overview controls.
 
 Additional actions in the Info tab:
 
-- **Move** -- transfer the device to another server profile
-- **Codec Helper** -- open the codec helper for the device profile's codec script
-- **Not activated banner** -- if an OTAA device has no active session, the banner provides quick OTAA steps and a refresh action
-- **Survey Device** -- tags a device that naturally reports infrequently; a badge appears in the header and list for context
+- **Move** — transfer the device to another server profile
+- **Codec Helper** — open the codec helper for the device profile's codec script
+- **Not activated banner** — if an OTAA device has no active session, the banner provides quick OTAA steps and a refresh action
+- **Survey Device** — tags a device that naturally reports infrequently; a badge appears in the header and list for context
 
-**Health tab** -- An overall health score (0-100) broken down into four components:
+**Health tab** — An overall health score (0–100) broken down into four components:
 
-- **Battery** -- voltage, charge level, drain trends
-- **Connectivity** -- how recently the device reported, message rate, gateway coverage
-- **Signal** -- RSSI, SNR, and link margin
-- **Data Quality** -- message gaps, duplicates, and error rates
+- **Battery** — voltage, charge level, drain trends
+- **Connectivity** — how recently the device reported, message rate, gateway coverage
+- **Signal** — RSSI, SNR, and link margin
+- **Data Quality** — message gaps, duplicates, and error rates
 
 Each component shows a trend arrow (improving, stable, or declining). Tap any metric to drill into time-series charts with selectable time ranges (24 hours, 7 days, 30 days, 90 days).
 
-**Sensors tab** -- Displays decoded telemetry values extracted from recent uplink payloads (e.g., temperature, humidity, battery voltage). Requires the device profile to have a payload codec configured in ChirpStack. Values update automatically as new frames arrive.
+**Sensors tab** — Displays decoded telemetry values extracted from recent uplink payloads (e.g., temperature, humidity, battery voltage). Requires the device profile to have a payload codec configured in ChirpStack. Values update automatically as new frames arrive.
 
-**Data tab** -- View raw uplink frames and device events (joins, activations, errors). Useful for debugging. Tap a field title in drilldowns to copy its value.
+**Data tab** — View raw uplink frames and device events (joins, activations, errors). Useful for debugging. Tap a field title in drilldowns to copy its value.
 
-**Commands tab** -- Send downlink commands to the device. Choose an FPort, payload format (HEX, Template, or JSON), and whether to require confirmed delivery. You can also pick from saved commands in your Command Library.
+**Commands tab** — Send downlink commands to the device. Choose an FPort, payload format (HEX, Template, or JSON), and whether to require confirmed delivery. You can also pick from saved commands in your Command Library.
 
 ---
 
@@ -200,7 +198,6 @@ Each rule has a **severity level** (Info, Warning, Critical) and can be enabled 
 ## Part 5: QR Code Scanning
 
 Tap **Scan QR Code** on the Home screen and point your camera at a QR code on device packaging. LoRACK! will parse the device identity and use it to speed up lookup or onboarding.
-> **Important:** The Home screen QR scanner is for **device onboarding/lookup QR codes only**. It does not import **Field Technician Access invites**.
 
 - If the device already exists on any of your configured servers, the app navigates to its detail screen
 - If the device is not found, the app offers to create it with the scanned information pre-filled
@@ -218,31 +215,12 @@ For SenseCAP labels and JSON payloads, the scanner can pre-fill:
 
 This is the fastest way to look up or onboard devices in the field.
 
-### Field Tech Invite QR Codes
-
-If you scan a Field Tech invite QR code in the device onboarding scanner, LoRACK! now detects that it is an invite and shows a guidance modal.
-
-The modal explains this is the wrong scanner and gives you these actions:
-
-- **Open Invite Import** -- opens Profiles and pre-fills the invite import flow
-- **Keep Device Scanner** -- stays in device scanning mode
-- **Cancel** -- closes scanning
-
-Use this flow instead:
-
-1. Go to **Profiles**
-2. Tap the **QR scanner icon** in the Profiles screen
-3. Scan the Field Tech invite QR code
-4. Review access summary and accept
-
-If needed, technicians can also paste the invite string manually from the same import flow.
-
 **OTAA join reminder (GLAMOS Walker):**
 
 If the device shows **Not activated**, make sure the Walker is set to **OTAA** and then send a message to trigger a join:
 
-1. `PARAMETERS -> ACTIVATION -> OTAA`
-2. `SEND -> ONCE` to trigger join
+1. `PARAMETERS → ACTIVATION → OTAA`
+2. `SEND → ONCE` to trigger join
 
 ---
 
@@ -318,7 +296,7 @@ These defaults are especially useful for Android field deployments where many de
 
 > Requires MoD AI configuration in your profile settings.
 
-The AI Troubleshooter provides a chat interface where you can ask questions about your network in plain English. It works like a conversation -- ask about device health, connectivity problems, battery issues, or signal quality.
+The AI Troubleshooter provides a chat interface where you can ask questions about your network in plain English. It works like a conversation — ask about device health, connectivity problems, battery issues, or signal quality.
 
 **Quick-action buttons** at the top give you one-tap access to common checks:
 
@@ -346,13 +324,13 @@ You can attach photos and contacts to devices, applications, and gateways. This 
 **Address Book:** The centralized Address Book (accessible from the Home screen) lets you manage contacts across your entire profile and reuse them via the Contact Selector.
 
 **Backup:** Export and import contacts from Settings, with the option to include or exclude photos to manage file size.
-Backups live in **Settings -> Backups**.
+Backups live in **Settings → Backups**.
 
 ---
 
 ## Part 9: Codec Helper
 
-The Codec Helper lets you test and debug payload decoder scripts -- the JavaScript functions that turn raw LoRaWAN bytes into readable sensor values like temperature, humidity, or battery voltage.
+The Codec Helper lets you test and debug payload decoder scripts — the JavaScript functions that turn raw LoRaWAN bytes into readable sensor values like temperature, humidity, or battery voltage.
 
 ### Opening the Codec Helper
 
@@ -364,9 +342,9 @@ The Codec Helper lets you test and debug payload decoder scripts -- the JavaScri
 
 **Test with recent payloads:** The helper loads the last 20 uplink payloads from the device's frame and event caches. Tap any payload to run it through the codec and see the decoded output instantly.
 
-**Enter a custom payload:** Type a hex string and fPort manually to test specific byte sequences -- useful when reproducing issues or testing edge cases.
+**Enter a custom payload:** Type a hex string and fPort manually to test specific byte sequences — useful when reproducing issues or testing edge cases.
 
-**Edit the codec script live:** The built-in editor shows the device profile's codec script. Make changes and see how they affect the decoded output in real time. Edits are temporary -- they don't modify the device profile on ChirpStack.
+**Edit the codec script live:** The built-in editor shows the device profile's codec script. Make changes and see how they affect the decoded output in real time. Edits are temporary — they don't modify the device profile on ChirpStack.
 
 **Compare original vs. modified:** When you edit the script, the helper shows a side-by-side comparison highlighting fields that changed, were added, or were removed between the original and modified decoders.
 
@@ -376,18 +354,18 @@ The Codec Helper lets you test and debug payload decoder scripts -- the JavaScri
 
 The helper recognizes the codec function signatures used by ChirpStack:
 
-- `decodeUplink({ bytes, fPort })` -- ChirpStack v4 standard
-- `Decode(port, bytes)` -- ChirpStack v3 / TTN legacy
-- `decode(port, bytes)` -- alternative naming
+- `decodeUplink({ bytes, fPort })` — ChirpStack v4 standard
+- `Decode(port, bytes)` — ChirpStack v3 / TTN legacy
+- `decode(port, bytes)` — alternative naming
 
 If your codec defines one of these functions, the helper calls it automatically. Scripts that `return` a result directly at the top level also work.
 
 ### Tips
 
-- **Reset** your edits at any time with the reset button -- the original script from ChirpStack is always preserved
+- **Reset** your edits at any time with the reset button — the original script from ChirpStack is always preserved
 - If a codec throws an error, the helper displays the error message inline so you can fix the script
 - Use the Codec Helper alongside the **Data** tab to cross-reference raw frame bytes with decoded values
-- Codec scripts run locally on your device -- no network call is needed to decode
+- Codec scripts run locally on your device — no network call is needed to decode
 
 ---
 
@@ -395,7 +373,7 @@ If your codec defines one of these functions, the helper calls it automatically.
 
 The Command Library stores reusable downlink command templates so you don't have to rebuild them every time.
 
-**Organizing commands:** Commands are grouped by category -- Configuration, Control, Query, Maintenance, Diagnostics, Time, and Custom. Use the search bar to find commands quickly.
+**Organizing commands:** Commands are grouped by category — Configuration, Control, Query, Maintenance, Diagnostics, Time, and Custom. Use the search bar to find commands quickly.
 
 **Creating a command:** Give it a name, set the FPort, choose a payload format (HEX for raw bytes, Template for parameterized payloads, JSON for codec-enabled devices), and optionally mark it as confirmed.
 
@@ -431,9 +409,9 @@ As you inspect devices, you can log findings with a title, severity (Info, Warni
 
 When you're done, generate a shareable text report. The report screen offers three ways to share:
 
-- **Send Email** -- opens your email client with the report pre-filled in the body. If the application has contacts with email addresses, those are suggested as recipients.
-- **Share** -- opens the system share sheet so you can send via any installed app
-- **Copy to Clipboard** -- copies the full report text for pasting elsewhere
+- **Send Email** — opens your email client with the report pre-filled in the body. If the application has contacts with email addresses, those are suggested as recipients.
+- **Share** — opens the system share sheet so you can send via any installed app
+- **Copy to Clipboard** — copies the full report text for pasting elsewhere
 
 > **Tip:** Your visit progress saves automatically and persists across app restarts. You can leave and come back without losing progress.
 
@@ -444,7 +422,7 @@ When you're done, generate a shareable text report. The report screen offers thr
 When troubleshooting, it helps to compare similar devices side by side.
 
 1. On the Devices screen, tap **Compare mode** in the header
-2. Select 2-4 devices using the checkboxes
+2. Select 2–4 devices using the checkboxes
 3. Tap **Compare**
 
 The comparison view shows health scores, battery levels, connectivity, signal, and data quality metrics in color-coded bars so you can quickly spot which device is underperforming and why.
@@ -459,10 +437,10 @@ Access Settings from the gear icon on the Home screen.
 
 Choose from four options:
 
-- **Light** -- bright interface
-- **Dark** -- reduced eye strain in low light (the default)
-- **Night** -- red-shifted colors for use in dark environments without affecting night vision
-- **System** -- follows your device's system setting
+- **Light** — bright interface
+- **Dark** — reduced eye strain in low light (the default)
+- **Night** — red-shifted colors for use in dark environments without affecting night vision
+- **System** — follows your device's system setting
 
 ### Behavior Settings
 
@@ -474,29 +452,29 @@ Choose from four options:
 
 ### Commands
 
-- **Command Library** -- manage your saved downlink command templates (see [Part 10](#part-10-command-library))
+- **Command Library** — manage your saved downlink command templates (see [Part 10](#part-10-command-library))
 
 ### Backups
 
-- **Contacts Backup** -- export, import, and manage contact backups. Choose whether to include photos (larger file size) or just contact data. Backups are stored locally and can be shared.
+- **Contacts Backup** — export, import, and manage contact backups. Choose whether to include photos (larger file size) or just contact data. Backups are stored locally and can be shared.
 
 ### Developer Tools
 
-- **Streaming Debug** -- test gRPC-Web streaming with four modes: Raw Fetch, XHR Text, Frames, and Events
+- **Streaming Debug** — test gRPC-Web streaming with four modes: Raw Fetch, XHR Text, Frames, and Events
 
 ### Profile Management (Profiles screen)
 
 Manage server profiles from the Home screen using the profile dropdown or **Go to Profiles**.
 
 - **Add/edit/delete profiles** to manage your ChirpStack server connections
-- **Import/Export profiles** to onboard teammates quickly -- export a profile and share it
-- **Field Technician Access** -- create read-only invites for field techs with optional app restrictions and onboarding credits (see [Part 14](#part-14-field-technician-access))
+- **Import/Export profiles** to onboard teammates quickly — export a profile and share it
+- **Field Technician Access** — create read-only invites for field techs with optional app restrictions and onboarding credits (see [Part 14](#part-14-field-technician-access))
 
 ---
 
 ## Part 14: Field Technician Access
 
-Field Technician Access lets admins create limited, read-only invites for field techs who need to view and occasionally onboard devices -- without giving them full admin control.
+Field Technician Access lets admins create limited, read-only invites for field techs who need to view and occasionally onboard devices — without giving them full admin control.
 
 Invite format and signature details are summarized in this section.
 
@@ -516,8 +494,8 @@ An admin creates an invite from the **Profiles** screen. The invite is a QR code
 2. Tap the **Field Tech Access** button on the profile you want to share
 3. Give the invite a label (e.g., the field tech's name)
 4. Select a tenant
-5. **Restrict applications** (optional) -- check the specific applications the field tech should see. Leave all unchecked to allow access to every application in the tenant.
-6. **Set onboarding credits** (optional) -- enter the number of devices the field tech is allowed to add. Leave at 0 if they should have view-only access with no device creation.
+5. **Restrict applications** (optional) — check the specific applications the field tech should see. Leave all unchecked to allow access to every application in the tenant.
+6. **Set onboarding credits** (optional) — enter the number of devices the field tech is allowed to add. Leave at 0 if they should have view-only access with no device creation.
 7. Tap **Create Invite**
 
 The invite is cryptographically signed using your API token, so any tampering during transit will be detectable.
@@ -528,7 +506,7 @@ The invite is cryptographically signed using your API token, so any tampering du
 
 1. Go to the **Profiles** screen
 2. Tap the **QR code scanner** icon
-3. Scan the admin's QR code -- or paste the invite string manually
+3. Scan the admin's QR code — or paste the invite string manually
 4. The app shows a summary of what the invite grants (server, tenant, any restrictions)
 5. Accept to create the profile
 
@@ -565,7 +543,7 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 
 ### Security Notes
 
-- The **real security boundary** is the ChirpStack API key. The field tech's token is a non-admin, tenant-scoped key -- ChirpStack itself enforces what API calls succeed or fail.
+- The **real security boundary** is the ChirpStack API key. The field tech's token is a non-admin, tenant-scoped key — ChirpStack itself enforces what API calls succeed or fail.
 - **App restrictions and credits** are convenience controls in the LoRACK! app. They scope the field tech's workflow and prevent accidental misuse, but they are not a substitute for proper API key management.
 - **Invite signing** (HMAC-SHA256) protects the invite payload during transit. If an invite is modified between the admin and the field tech, the signature will not match. Unsigned invites are still accepted for backward compatibility.
 - To fully revoke a field tech's access, **delete or regenerate the API key** in ChirpStack.
@@ -574,19 +552,19 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 
 ## Part 15: Tips for Getting the Most Out of LoRACK!
 
-**Use multiple profiles** -- If you manage staging and production ChirpStack servers, create a profile for each and switch between them from the Home screen.
+**Use multiple profiles** — If you manage staging and production ChirpStack servers, create a profile for each and switch between them from the Home screen.
 
-**Set up alerts early** -- Configure alert rules for device-offline and low-battery conditions so you catch problems before they escalate.
+**Set up alerts early** — Configure alert rules for device-offline and low-battery conditions so you catch problems before they escalate.
 
-**Leverage QR scanning** -- When deploying new devices, scan their QR codes to speed up onboarding with pre-filled DevEUI and JoinEUI.
+**Leverage QR scanning** — When deploying new devices, scan their QR codes to speed up onboarding with pre-filled DevEUI and JoinEUI.
 
-**Build a command library** -- If you frequently send the same downlink commands, save them once in the Command Library and reuse them across devices.
+**Build a command library** — If you frequently send the same downlink commands, save them once in the Command Library and reuse them across devices.
 
-**Map view** -- Devices appear on the map when location data is present (e.g., GPS fields in uplinks or stored coordinates).
+**Map view** — Devices appear on the map when location data is present (e.g., GPS fields in uplinks or stored coordinates).
 
-**Back up contacts regularly** -- Use Settings > Export Contacts to create periodic backups, especially before updating the app.
+**Back up contacts regularly** — Use Settings > Export Contacts to create periodic backups, especially before updating the app.
 
-**Use site visits for audits** -- Even if you're not a field technician, the Site Visit workflow is useful for systematic device audits and generating documentation.
+**Use site visits for audits** — Even if you're not a field technician, the Site Visit workflow is useful for systematic device audits and generating documentation.
 
 ---
 
