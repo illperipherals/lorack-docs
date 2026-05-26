@@ -46,7 +46,8 @@ To fully revoke a field tech's access, **delete or regenerate the API key** in C
 | `src/services/field-tech-invite-storage.ts` | Persist invite metadata for QR recall |
 | `src/services/profile-storage.ts` | Profile interface (allowedApplicationIds, onboardingCredits, inviteSignature) |
 | `src/screens/FieldTechAccessScreen.tsx` | Admin: create invites with app restrictions + credits |
-| `src/screens/ServersScreen.tsx` | Import invites; "Edit Access" modal for post-import adjustments |
+| `src/components/ProfileSwitcher.tsx` | Import invites from FAB actions (backup + field tech) |
+| `src/screens/ProfileBackupsScreen.tsx` | Profile backup import/export management from Settings |
 | `src/screens/ApplicationsScreen.tsx` | Filters apps by allowedApplicationIds |
 | `src/screens/AddDeviceScreen.tsx` | Checks/decrements credits on device creation |
 | `src/screens/DevicesScreen.tsx` | Shows FAB + credit badge for field techs with credits |

@@ -43,11 +43,11 @@ A "profile" in LoRACK! represents one ChirpStack server. You can create multiple
 
       ![alt text](/img/image-4.png)
 
-2. Tap the **profile dropdown** at the top of the screen or just click the **Go to Profiles** button.
+2. Tap the **profile dropdown** at the top of the screen, then tap **+** to create a profile.
 
       ![alt text](/img/image-5.png)
 
-3. Choose **Create New Profile**
+3. Fill out the **Add Profile** form.
 
       ![alt text](/img/image-6.png)
 
@@ -462,13 +462,14 @@ Choose from four options:
 
 - **Streaming Debug** — test gRPC-Web streaming with four modes: Raw Fetch, XHR Text, Frames, and Events
 
-### Profile Management (Profiles screen)
+### Profile Management (Profiles menu)
 
-Manage server profiles from the Home screen using the profile dropdown or **Go to Profiles**.
+Manage profiles from the Home screen using the **profile dropdown** menu.
 
-- **Add/edit/delete profiles** to manage your ChirpStack server connections
-- **Import/Export profiles** to onboard teammates quickly — export a profile and share it
-- **Field Technician Access** — create read-only invites for field techs with optional app restrictions and onboarding credits (see [Part 14](#part-14-field-technician-access))
+- **+ Add Profile** opens the create-profile form
+- **Import Profiles** opens the Merge/Replace selector from the Profiles FAB menu
+- **Field Tech Import** opens QR/paste invite import from the Profiles FAB menu
+- **Profile Backups** live in **Settings → Backups → Profiles Backup**
 
 ---
 
@@ -528,18 +529,17 @@ The profile appears in the Profiles list with a **read-only badge**. If the invi
 
 When a field tech has onboarding credits, a **credit badge** appears on the Devices screen's add button showing the remaining count. Each time the field tech successfully creates a device, one credit is deducted. When credits reach zero, the add button disappears.
 
-Credits are tracked locally on the field tech's device. An admin can adjust credits after import by tapping **Edit Access** on the profile card in the Profiles screen.
+Credits are tracked locally on the field tech's device. To change limits, admins should generate and share a new invite with updated application restrictions and onboarding credits.
 
-### Editing Access After Import
+### Updating Access After Import
 
-Admins (or the field tech themselves) can adjust restrictions post-import:
+If access requirements change after import:
 
-1. Go to the **Profiles** screen
-2. Find the read-only profile and tap **Edit Access**
-3. Update allowed applications or credit count
-4. Save
+1. Admin creates a new invite from **Field Tech Access**
+2. Set updated allowed applications and/or onboarding credits
+3. Field tech imports the new invite from the **Profiles** FAB menu
 
-This is useful when an admin wants to grant additional credits remotely (e.g., by telling the field tech to change the number) or when project scope changes.
+This keeps restrictions aligned with current project scope.
 
 ### Security Notes
 
@@ -583,8 +583,8 @@ This is useful when an admin wants to grant additional credits remotely (e.g., b
 | Get notified about offline devices | Alerts > Rules > New Rule |
 | Ask AI about a problem | Home > AI Troubleshooter |
 | Inspect devices in the field | Home > Site Visit |
-| Share my server config with a teammate | Profiles > Export Profiles |
+| Share my server config with a teammate | Settings > Backups > Profiles Backup > Export |
 | Create a field tech invite | Profiles > Field Tech Access |
-| Import a field tech invite | Profiles > QR scanner icon |
-| Adjust a field tech's credits or app access | Profiles > Edit Access on the profile card |
+| Import a field tech invite | Profiles > + menu > Field Tech Import |
+| Change a field tech's credits or app access | Field Tech Access > Create a new invite with updated limits |
 | Compare underperforming devices | Devices > Compare mode > Compare |

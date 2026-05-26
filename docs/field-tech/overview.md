@@ -62,7 +62,7 @@ If provisioning defaults were included, the SenseCAP BLE provisioning screen use
 
 When a field tech has onboarding credits, a **credit badge** appears on the Devices screen's add button showing the remaining count. Each time the field tech successfully creates a device, one credit is deducted. When credits reach zero, the add button disappears.
 
-Credits are tracked locally on the field tech's device. An admin can adjust credits after import by tapping **Edit Access** on the profile card in the Profiles screen.
+Credits are tracked locally on the field tech's device. To change limits, admins should generate and share a new invite with updated application restrictions and onboarding credits.
 
 ## SenseCAP BLE Onboarding
 
@@ -78,16 +78,15 @@ With a signed invite plus onboarding credits, a technician can:
 
 This keeps the in-field workflow fast while still constraining what the technician can see and how many devices they can add.
 
-## Editing Access After Import
+## Updating Access After Import
 
-Admins (or the field tech themselves) can adjust restrictions post-import:
+If access requirements change after import:
 
-1. Go to the **Profiles** screen
-2. Find the read-only profile and tap **Edit Access**
-3. Update allowed applications or credit count
-4. Save
+1. Admin creates a new invite from **Field Tech Access**
+2. Set updated allowed applications and/or onboarding credits
+3. Field tech imports the new invite from the **Profiles** FAB menu
 
-This is useful when an admin wants to grant additional credits remotely (e.g., by telling the field tech to change the number) or when project scope changes.
+This keeps restrictions aligned with current project scope.
 
 ## Data Flow
 
@@ -98,7 +97,7 @@ Admin creates invite (FieldTechAccessScreen)
   → payload encoded as base64url, HMAC-signed with admin's API token
   → QR code / invite string shared to field tech
 
-Field Tech imports invite (ServersScreen)
+Field Tech imports invite (ProfileSwitcher FAB)
   → decodes payload, extracts signature
   → creates profile with hasDeviceWritePermissions: false
   → stores allowedApplicationIds, onboardingCredits, inviteSignature
