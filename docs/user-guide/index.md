@@ -29,7 +29,7 @@ LoRACK! connects directly to your [ChirpStack](https://www.chirpstack.io/) serve
 
 Before opening the app, have the following ready:
 
-1. **Server address** — the hostname and port of your ChirpStack server (e.g., `chirpstack.example.com:8080`)
+1. **Server address** — the hostname and port of your ChirpStack server (e.g., `chirpstack.example.com:443`)
 2. **API token** — generated in the ChirpStack web UI under **API Keys**
 3. **TLS setting** — whether your server uses HTTP or HTTPS
 
