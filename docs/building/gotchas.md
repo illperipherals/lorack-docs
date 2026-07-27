@@ -179,6 +179,26 @@ if (!tenantIds || tenantIds.length === 0) {
 
 ## Build System
 
+### Worklets Native Outputs Require the Postinstall Compatibility Patch
+
+**Problem**: Clean or repeated Android builds fail while linking Reanimated or
+Expo Modules Core, report undefined Worklets symbols, or produce a zero-byte
+`libworklets.so`.
+
+**Cause**: `react-native-worklets` `0.7.4` writes native libraries to the current
+AGP CXX output directory, while downstream prefab consumers expect the legacy
+CMake directory. AGP can hard-link copied native outputs; overwriting the legacy
+file can therefore truncate the source library through the shared inode.
+
+**Solution**: Keep `scripts/patch-worklets-native-build.js` in both postinstall
+commands. It orders the per-ABI linker tasks, deletes the old destination before
+copying, validates file sizes, and connects the consumer native builds to the
+compatibility sync tasks.
+
+After changing this patch, validate both a clean build and an immediate repeated
+build. Test debug and release native builds across `arm64-v8a`, `armeabi-v7a`,
+`x86`, and `x86_64`.
+
 ### Generated Protobuf Files Must Be in Git
 **Problem**: EAS builds fail with "cannot find module" errors.
 

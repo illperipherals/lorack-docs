@@ -101,25 +101,21 @@ pod install
 
 ## Release Signing Configuration (Android)
 
-Release builds are automatically signed using the keystore configured in `android/gradle.properties`.
+Release builds use the keystore and credentials configured through environment
+variables. EAS supplies these values for managed builds. For a direct local Gradle
+build, configure:
 
-### Keystore Details
-- **File**: `android/app/lorack-release-key.keystore`
-- **Alias**: `lorack-key-alias`
-- **Type**: PKCS12
-- **Validity**: 10,000 days (~27 years)
-
-⚠️ **IMPORTANT**: The keystore file and `gradle.properties` contain sensitive credentials and are gitignored. Never commit these files.
-
-### Updating Keystore Password
-
-Edit `android/gradle.properties` (this file is gitignored):
-```properties
-LORACK_RELEASE_STORE_FILE=lorack-release-key.keystore
-LORACK_RELEASE_KEY_ALIAS=lorack-key-alias
-LORACK_RELEASE_STORE_PASSWORD=your_password_here
-LORACK_RELEASE_KEY_PASSWORD=your_password_here
+```bash
+export ANDROID_KEYSTORE_PATH=/absolute/path/to/keystore.jks
+export ANDROID_KEYSTORE_PASSWORD='...'
+export ANDROID_KEY_PASSWORD='...' # Optional; defaults to the store password
+export ANDROID_KEY_ALIAS='...'    # Optional; defaults to the production alias
 ```
+
+If `ANDROID_KEYSTORE_PATH` is unset, Gradle looks for
+`credentials/android/keystore.jks`. The `credentials/` directory is gitignored.
+
+⚠️ **IMPORTANT**: Never commit the keystore or its passwords.
 
 ### Backup Your Keystore
 
@@ -146,7 +142,37 @@ adb install android/app/build/outputs/apk/release/app-release.apk
 ## Troubleshooting
 
 ### Android: Build Fails with "Keystore not found"
-Ensure `android/app/lorack-release-key.keystore` exists and `gradle.properties` is configured correctly.
+Set `ANDROID_KEYSTORE_PATH` to an existing keystore, or provision
+`credentials/android/keystore.jks`. This error occurs during release packaging;
+if the native tasks completed first, it does not indicate a native compilation
+failure.
+
+### Android: Worklets Native Link Errors
+
+LoRACK uses `react-native-worklets` `0.7.4` with Reanimated and Expo Modules
+Core. These consumers expect `libworklets.so` in an older Android Gradle Plugin
+output path. The postinstall script
+`scripts/patch-worklets-native-build.js` adds debug and release synchronization
+tasks that copy each ABI's library into the expected compatibility path.
+
+The patch deliberately:
+
+- waits for every per-ABI Worklets CMake linker task;
+- removes an existing compatibility library before copying, because AGP may
+  hard-link native outputs and overwriting a hard link can truncate the source;
+- rejects zero-byte source libraries and incomplete copies; and
+- wires Reanimated and Expo Modules Core native builds to the synchronization
+  task.
+
+The script runs automatically through `npm install`. If `node_modules` was
+restored without lifecycle scripts, apply it manually:
+
+```bash
+node scripts/patch-worklets-native-build.js
+```
+
+Do not remove this postinstall patch without first verifying clean and repeated
+debug and release native builds for all four Android ABIs.
 
 ### Android: Build Fails with JDK Version Error
 Make sure you're using JDK 17:
